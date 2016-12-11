@@ -1,0 +1,58 @@
+{
+  "name": "full-stack-course",
+  "version": "1.0.0",
+  "description": "full stack course",
+  "main": "index.js",
+  "dependencies": {
+    "async": "^1.5.0",
+    "fs-extra": "^0.26.0",
+    "gh-pages": "^0.4.0"
+  },
+  "devDependencies": {
+    "ebook-convert": "^1.0.0",
+    "gitbook": "^3.2.2",
+    "gitbook-cli": "^2.3.0",
+    "gitbook-plugin-ad": "0.0.4",
+    "gitbook-plugin-baidu": "^0.1.0",
+    "gitbook-plugin-disqus": "^0.1.0",
+    "gitbook-plugin-editlink": "^1.0.2",
+    "gitbook-plugin-github": "^2.0.0",
+    "gitbook-plugin-prism": "^1.1.0",
+    "gitbook-plugin-sitemap": "^1.2.0",
+    "gitbook-plugin-splitter": "0.0.7",
+    "gitbook-plugin-toggle-chapters": "0.0.3",
+    "prismjs": "^1.6.0"
+  },
+  "scripts": {
+    "start": "gitbook serve ./content ./gh-pages",
+    "build": "gitbook build ./content ./gh-pages",
+    "generate-wiki": "node ./scripts/generate-wiki.js",
+    "deploy": "node ./scripts/deploy-gh-pages.js",
+    "deploy-wiki": "./scripts/deploy-wiki.sh",
+    "generate-and-deploy": "npm run generate-gitbook && npm run generate-wiki && npm run deploy-gitbook && npm run deploy-wiki",
+    "publish-gitbook": "./scripts/publish-gitbook.sh",
+    "publish": "npm run build && npm run deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuoYongfeng/course-book.git"
+  },
+  "keywords": [
+    "webpack",
+    "babel",
+    "es6",
+    "react",
+    "nodejs",
+    "npm",
+    "mocha",
+    "redux",
+    "git",
+    "shell"
+  ],
+  "author": "GuoYongfeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuoYongfeng/course-book/issues"
+  },
+  "homepage": "https://github.com/GuoYongfeng/course-book#readme"
+}

@@ -1,0 +1,33 @@
+{
+  "title": "打造未来的前端架构师",
+  "description": "打造未来的前端架构师",
+  "language": "zh-hans",
+  "gitbook": "3.x.x",
+  "plugins": [
+    "github",
+    "disqus",
+    "prism",
+    "-highlight"
+  ],
+  "pluginsConfig": {
+    "github": {
+      "url": "https://github.com/GuoYongfeng"
+    },
+    "disqus": {
+        "shortName": "为本书评论"
+    },
+    "prism": {
+      "css": [
+        "prismjs/themes/prism-okaidia.css"
+      ]
+    },
+    "sharing": {
+      "weibo": true,
+      "twitter": false,
+      "facebook": false
+    },
+    "sitemap": {
+      "hostname": "http://guoyongfeng.github.io/course-book/"
+    }
+  }
+}
