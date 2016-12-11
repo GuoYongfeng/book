@@ -3,6 +3,8 @@ logs
 *.log
 npm-debug.log*
 
+content/_book
+
 # Runtime data
 pids
 *.pid
