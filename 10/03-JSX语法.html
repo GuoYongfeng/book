@@ -1,0 +1,2792 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>03-JSX语法 · 现代化前端工程师权威指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="04-数据流.html" />
+    
+    
+    <link rel="prev" href="02-初识React.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    第一章：Git和Github快速入门指南
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../01/01-概述.html">
+            
+                <a href="../01/01-概述.html">
+            
+                    
+                    01-概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../01/02-跳上github这艘大船.html">
+            
+                <a href="../01/02-跳上github这艘大船.html">
+            
+                    
+                    02-跳上github这艘大船
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../01/03-git安装和基本配置.html">
+            
+                <a href="../01/03-git安装和基本配置.html">
+            
+                    
+                    03-git安装和基本配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../01/04-git命令行基本使用.html">
+            
+                <a href="../01/04-git命令行基本使用.html">
+            
+                    
+                    04-git命令行基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../01/05-git分支操作.html">
+            
+                <a href="../01/05-git分支操作.html">
+            
+                    
+                    05-git分支操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../01/06-打通git和github.html">
+            
+                <a href="../01/06-打通git和github.html">
+            
+                    
+                    06-打通git和github
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    第二章：Node.js 基础和实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../02/01-概述.html">
+            
+                <a href="../02/01-概述.html">
+            
+                    
+                    01-概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02/02-初识Node.js.html">
+            
+                <a href="../02/02-初识Node.js.html">
+            
+                    
+                    02-初识Node.js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../02/03-nodejs的安装和配置.html">
+            
+                <a href="../02/03-nodejs的安装和配置.html">
+            
+                    
+                    03-nodejs的安装和配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../02/04-npm的使用.html">
+            
+                <a href="../02/04-npm的使用.html">
+            
+                    
+                    04-npm的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../02/05-Node.js编程初体验.html">
+            
+                <a href="../02/05-Node.js编程初体验.html">
+            
+                    
+                    05-Node.js编程初体验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../02/06-模块和commonjs规范.html">
+            
+                <a href="../02/06-模块和commonjs规范.html">
+            
+                    
+                    06-模块和commonjs规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../02/07-Nodejs中的对象和核心API.html">
+            
+                <a href="../02/07-Nodejs中的对象和核心API.html">
+            
+                    
+                    07-Nodejs中的对象和核心API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    第三章：使用Node.js 进行命令行工具开发的实战案例
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" >
+            
+                <span>
+            
+                    
+                    01-功能说明
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <span>
+            
+                    
+                    02-process模块
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" >
+            
+                <span>
+            
+                    
+                    03-package.json说明和修改
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" >
+            
+                <span>
+            
+                    
+                    04-commander模块
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" >
+            
+                <span>
+            
+                    
+                    05-模块的调试
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" >
+            
+                <span>
+            
+                    
+                    06-完善功能
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" >
+            
+                <span>
+            
+                    
+                    07-模块发布
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    第四章：现代化CSS样式的
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" >
+            
+                <span>
+            
+                    
+                    01-css的世界
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                    02-less预处理器
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                    03-sass预处理器
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" >
+            
+                <span>
+            
+                    
+                    04-stylus预处理器
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" >
+            
+                <span>
+            
+                    
+                    05-强大的postcss
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    第五章：ES6新语法特性和Babel编译器
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <span>
+            
+                    
+                    01-概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <span>
+            
+                    
+                    02-babel-cli & preset & plugin
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" >
+            
+                <span>
+            
+                    
+                    03-babel-core & babel-register & babel-polyfill
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" >
+            
+                <span>
+            
+                    
+                    04-关于ES6的说明
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" >
+            
+                <span>
+            
+                    
+                    05-let和const的使用和说明
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" >
+            
+                <span>
+            
+                    
+                    06-如何定义箭头函数
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    第六章：基于ES6的Package实战案例
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" >
+            
+                <span>
+            
+                    
+                    01-概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" >
+            
+                <span>
+            
+                    
+                    02-使用gulp构建
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" >
+            
+                <span>
+            
+                    
+                    03-语法改造
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" >
+            
+                <span>
+            
+                    
+                    04-功能完善
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" >
+            
+                <span>
+            
+                    
+                    05-如何测试ES6
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    第七章：争做合格的 Webpack 配置工程师
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" >
+            
+                <span>
+            
+                    
+                    01-概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" >
+            
+                <span>
+            
+                    
+                    02-webpack的介绍
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" >
+            
+                <span>
+            
+                    
+                    03-快速上手
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" >
+            
+                <span>
+            
+                    
+                    04-webpack的命令行介绍
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" >
+            
+                <span>
+            
+                    
+                    05-webpack-dev-server的基本介绍和使用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" >
+            
+                <span>
+            
+                    
+                    06-webpack的loader的配置
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" >
+            
+                <span>
+            
+                    
+                    07-webpack的插件使用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" >
+            
+                <span>
+            
+                    
+                    08-实现ES6语法的解析
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" >
+            
+                <span>
+            
+                    
+                    09-实现React语法的解析
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" >
+            
+                <span>
+            
+                    
+                    10-打包优化
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    第八章：使用Webpack搭建项目脚手架的实战案例
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" >
+            
+                <span>
+            
+                    
+                    01-需求分析
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" >
+            
+                <span>
+            
+                    
+                    02-项目初始化
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" >
+            
+                <span>
+            
+                    
+                    03-不同开发环境的配置区分
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" >
+            
+                <span>
+            
+                    
+                    04-cross-env模块介绍和环境变量
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" >
+            
+                <span>
+            
+                    
+                    05-完成base基础配置
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" >
+            
+                <span>
+            
+                    
+                    06-完成dev配置
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" >
+            
+                <span>
+            
+                    
+                    07-完成prod配置
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" >
+            
+                <span>
+            
+                    
+                    08-完成dll配置
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" >
+            
+                <span>
+            
+                    
+                    09-完成test配置
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" >
+            
+                <span>
+            
+                    
+                    10-补充和调整
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    第九章：实现前端项目的完整测试机制
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" >
+            
+                <span>
+            
+                    
+                    01-karma测试运行器
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" >
+            
+                <span>
+            
+                    
+                    02-mocha测试框架
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" >
+            
+                <span>
+            
+                    
+                    03-chai断言库的使用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" >
+            
+                <span>
+            
+                    
+                    04-expect断言库
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" >
+            
+                <span>
+            
+                    
+                    05-jsdom模拟浏览器DOM测试
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" >
+            
+                <span>
+            
+                    
+                    06-如何实现e2e测试
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    第十章：React.js 基础详解
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="01-概述.html">
+            
+                <a href="01-概述.html">
+            
+                    
+                    01-概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="02-初识React.html">
+            
+                <a href="02-初识React.html">
+            
+                    
+                    02-初识React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11.3" data-path="03-JSX语法.html">
+            
+                <a href="03-JSX语法.html">
+            
+                    
+                    03-JSX语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="04-数据流.html">
+            
+                <a href="04-数据流.html">
+            
+                    
+                    04-数据流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="05-如何定义一个组件.html">
+            
+                <a href="05-如何定义一个组件.html">
+            
+                    
+                    05-如何定义一个组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="06-DOM操作.html">
+            
+                <a href="06-DOM操作.html">
+            
+                    
+                    06-DOM操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="07-事件.html">
+            
+                <a href="07-事件.html">
+            
+                    
+                    07-事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="08-组件嵌套.html">
+            
+                <a href="08-组件嵌套.html">
+            
+                    
+                    08-组件嵌套
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="09-表单操作.html">
+            
+                <a href="09-表单操作.html">
+            
+                    
+                    09-表单操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="10-如何实现mixin.html">
+            
+                <a href="10-如何实现mixin.html">
+            
+                    
+                    10-如何实现mixin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.11" data-path="11-基于react的评论应用开发.html">
+            
+                <a href="11-基于react的评论应用开发.html">
+            
+                    
+                    11-基于react的评论应用开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    第十一章：深入react
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" >
+            
+                <span>
+            
+                    
+                    01-如何进行组件的测试
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" >
+            
+                <span>
+            
+                    
+                    02-DOM Diff原理和性能
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" >
+            
+                <span>
+            
+                    
+                    03-如何进行性能优化
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" >
+            
+                <span>
+            
+                    
+                    04-VDOM原理解析
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" >
+            
+                <span>
+            
+                    
+                    05-add-ons附加套件
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" >
+            
+                <span>
+            
+                    
+                    06-React组件在服务端渲染
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" >
+            
+                <span>
+            
+                    
+                    07-动画组件
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.8" >
+            
+                <span>
+            
+                    
+                    08-实战：开发一个标准react组件并发布
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    第十二章：路由库react-router的入门和应用
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" >
+            
+                <span>
+            
+                    
+                    01-概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" >
+            
+                <span>
+            
+                    
+                    02-打通基本开发环境
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" >
+            
+                <span>
+            
+                    
+                    03-基于react-router跑通基本路由
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" >
+            
+                <span>
+            
+                    
+                    04-使用Link组件进行导航切换
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" >
+            
+                <span>
+            
+                    
+                    05-路由的嵌套使用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6" >
+            
+                <span>
+            
+                    
+                    06-activeClassName和activeStyle设置路由激活状态
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.7" >
+            
+                <span>
+            
+                    
+                    07-params路由参数
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.8" >
+            
+                <span>
+            
+                    
+                    08-更复杂的路由嵌套结合
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.9" >
+            
+                <span>
+            
+                    
+                    09-IndexRoute的使用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.10" >
+            
+                <span>
+            
+                    
+                    10-IndexLink的使用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.11" >
+            
+                <span>
+            
+                    
+                    11-如何使用browserHistory
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.12" >
+            
+                <span>
+            
+                    
+                    12-线上环境如何使用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.13" >
+            
+                <span>
+            
+                    
+                    13-navigating
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    第十三章：react+react-router应用案例实战
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" >
+            
+                <span>
+            
+                    
+                    01-概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" >
+            
+                <span>
+            
+                    
+                    02-搭建开发环境
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" >
+            
+                <span>
+            
+                    
+                    03-使用react-router跑通基本路由
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.4" >
+            
+                <span>
+            
+                    
+                    04-新增头部搜索组件
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.5" >
+            
+                <span>
+            
+                    
+                    05-创建展示用户信息的Profile组件
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.6" >
+            
+                <span>
+            
+                    
+                    06-创建组件UserProfile、UserRepos、Notes
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.7" >
+            
+                <span>
+            
+                    
+                    07-使用state和props传递数据
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.8" >
+            
+                <span>
+            
+                    
+                    08-接入真实的数据
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.9" >
+            
+                <span>
+            
+                    
+                    09-评论列表组件NoteList
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.10" >
+            
+                <span>
+            
+                    
+                    10-为组件添加PropTypes接口约束
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.11" >
+            
+                <span>
+            
+                    
+                    11-使用axios请求github API的数据
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.12" >
+            
+                <span>
+            
+                    
+                    12-将数据传入组件进行展
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    第十四章：初入redux的世界
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" >
+            
+                <span>
+            
+                    
+                    01-关于redux
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" >
+            
+                <span>
+            
+                    
+                    02-quick-start
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" >
+            
+                <span>
+            
+                    
+                    05-top-api-and-dispatch
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" >
+            
+                <span>
+            
+                    
+                    06-subscribe
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" >
+            
+                <span>
+            
+                    
+                    07-action-creator
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" >
+            
+                <span>
+            
+                    
+                    08-react-redux
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.7" >
+            
+                <span>
+            
+                    
+                    09-实战：开发一个标准的counter-app
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" >
+            
+                <span>
+            
+                    
+                    第十五章：深入redux的应用
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" >
+            
+                <span>
+            
+                    
+                    01-概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" >
+            
+                <span>
+            
+                    
+                    02-middleware中间节概念介绍
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" >
+            
+                <span>
+            
+                    
+                    03-redux中的middleware
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.4" >
+            
+                <span>
+            
+                    
+                    04-redux-logger的应用和理解
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.5" >
+            
+                <span>
+            
+                    
+                    05-如何定义一个redux的中间件
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.6" >
+            
+                <span>
+            
+                    
+                    06-redux的开发工具dev-tools
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.7" >
+            
+                <span>
+            
+                    
+                    07-开发工具使用上的优化
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.8" >
+            
+                <span>
+            
+                    
+                    08-redux-thunk实现异步数据流
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.9" >
+            
+                <span>
+            
+                    
+                    09-redux-saga的使用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.10" >
+            
+                <span>
+            
+                    
+                    10-redux-promise实现异步编程操作
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.11" >
+            
+                <span>
+            
+                    
+                    11-redux和react-router如何在一起
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" >
+            
+                <span>
+            
+                    
+                    第十六章：基于 Redux 的应用开发
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" >
+            
+                <span>
+            
+                    
+                    01-概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" >
+            
+                <span>
+            
+                    
+                    02-开发环境说明
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.3" >
+            
+                <span>
+            
+                    
+                    03-准备工作
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.4" >
+            
+                <span>
+            
+                    
+                    04-应用开发
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" >
+            
+                <span>
+            
+                    
+                    第十七章：Rxjs和Redux-observable的激情火花
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.18.1" >
+            
+                <span>
+            
+                    
+                    01-概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.2" >
+            
+                <span>
+            
+                    
+                    02-什么是rxjs
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.3" >
+            
+                <span>
+            
+                    
+                    03-rxjs快速上手
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.4" >
+            
+                <span>
+            
+                    
+                    04-rxjs的基本使用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.5" >
+            
+                <span>
+            
+                    
+                    05-rxjs和redux
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.6" >
+            
+                <span>
+            
+                    
+                    06-redux-observable的基本理解
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18.7" >
+            
+                <span>
+            
+                    
+                    07-如何使用redux-observable
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" >
+            
+                <span>
+            
+                    
+                    第十八章：Node.js服务端编程体验
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.1" >
+            
+                <span>
+            
+                    
+                    01-概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.2" >
+            
+                <span>
+            
+                    
+                    02-express框架
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.3" >
+            
+                <span>
+            
+                    
+                    03-jade模板
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.4" >
+            
+                <span>
+            
+                    
+                    04-forever模块
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.5" >
+            
+                <span>
+            
+                    
+                    05-request模块
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19.6" >
+            
+                <span>
+            
+                    
+                    06-cookie和session
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" >
+            
+                <span>
+            
+                    
+                    第十九章：Node.js框架Koa2的入门和使用
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.20.1" >
+            
+                <span>
+            
+                    
+                    01-概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.2" >
+            
+                <span>
+            
+                    
+                    02-什么是koa
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.3" >
+            
+                <span>
+            
+                    
+                    03-koa 1.0 和koa 2.0
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20.4" >
+            
+                <span>
+            
+                    
+                    04-快速上手koa
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" >
+            
+                <span>
+            
+                    
+                    第二十章：Node.js + React.js的前后端同构项目
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" >
+            
+                <span>
+            
+                    
+                    01-架构分析
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" >
+            
+                <span>
+            
+                    
+                    02-开发环境
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" >
+            
+                <span>
+            
+                    
+                    03-功能说明
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4" >
+            
+                <span>
+            
+                    
+                    04-前端架构实现
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" >
+            
+                <span>
+            
+                    
+                    附录
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.22.1" data-path="../21/01-markdown 语法介绍和使用.html">
+            
+                <a href="../21/01-markdown 语法介绍和使用.html">
+            
+                    
+                    01-markdown 语法介绍和使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.2" data-path="../21/02-Atom 编辑器的使用和配置.html">
+            
+                <a href="../21/02-Atom 编辑器的使用和配置.html">
+            
+                    
+                    02-Atom 编辑器的使用和配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.3" data-path="../21/03-eslint 的使用.html">
+            
+                <a href="../21/03-eslint 的使用.html">
+            
+                    
+                    03-eslint 的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.4" data-path="../21/04-shell 命令行基础使用.html">
+            
+                <a href="../21/04-shell 命令行基础使用.html">
+            
+                    
+                    04-shell 命令行基础使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.5" data-path="../21/05-JavaScript 函数式编程.html">
+            
+                <a href="../21/05-JavaScript 函数式编程.html">
+            
+                    
+                    05-JavaScript 函数式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.6" data-path="../21/06-JavaScript 异步编程指南.html">
+            
+                <a href="../21/06-JavaScript 异步编程指南.html">
+            
+                    
+                    06-JavaScript 异步编程指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.7" data-path="../21/07-react.js 编码规范.html">
+            
+                <a href="../21/07-react.js 编码规范.html">
+            
+                    
+                    07-react.js 编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22.8" data-path="../21/08-immutable.js 介绍和使用.html">
+            
+                <a href="../21/08-immutable.js 介绍和使用.html">
+            
+                    
+                    08-immutable.js 介绍和使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >03-JSX语法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="react&#x7B2C;&#x4E8C;&#x8BB2;&#x8BFE;&#x5802;&#x7B14;&#x8BB0;&#xFF08;jsx-&#x8BED;&#x6CD5;&#xFF09;">React&#x7B2C;&#x4E8C;&#x8BB2;&#x8BFE;&#x5802;&#x7B14;&#x8BB0;&#xFF08;JSX &#x8BED;&#x6CD5;&#xFF09;</h1>
+<h2 id="1-&#x4EC0;&#x4E48;&#x662F;-jsx">1. <code>&#x4EC0;&#x4E48;&#x662F; JSX</code></h2>
+<p>&#x7C7B;&#x4F3C; xml &#x7684;&#x8BED;&#x6CD5;&#xFF0C;&#x7528;&#x6765;&#x63CF;&#x8FF0;&#x7EC4;&#x4EF6;&#x6811;</p>
+<pre class="language-"><code>var HelloMessage = React.createClass({
+  render: function() {
+    return <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>Hello {this.props.name}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>;
+  }
+});
+
+React.render(<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>HelloMessage</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>John<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>, mountNode);
+</code></pre><p>JSX&#x662F;&#x53EF;&#x9009;&#x7684;&#xFF0C;&#x5E76;&#x4E0D;&#x5F3A;&#x5236;&#x8981;&#x6C42;&#x4F7F;&#x7528;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x7528;JSX&#xFF0C;&#x7528;React&#x63D0;&#x4F9B;&#x7684;API&#x5199;&#x7684;&#x8BDD;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF0C;&#x76F4;&#x63A5;&#x8C03;&#x7528;React&#x7684;API&#x6765;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x548C;DOM&#x5143;&#x7D20;&#x3002;</p>
+<pre class="language-"><code>
+var HelloMessage = React.createClass({
+  displayName: &quot;HelloMessage&quot;,
+  render: function() {
+    return React.createElement(&quot;div&quot;, null, &quot;Hello &quot;, this.props.name);
+  }
+});
+
+React.render(React.createElement(HelloMessage, {name: &quot;John&quot;}), mountNode);
+</code></pre><h2 id="2-&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;-jsx">2. <code>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528; JSX</code></h2>
+<p>&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x4E3A;&#x4E86; React &#x4F7F;&#x7528; JSX&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x7EAF;&#x7CB9;&#x7684; JS&#x3002;&#x4F46;&#x6211;&#x4EEC;&#x66F4;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; JSX , <strong>&#x56E0;&#x4E3A;&#x5B83;&#x80FD;&#x5B9A;&#x4E49;&#x7B80;&#x6D01;&#x4E14;&#x6211;&#x4EEC;&#x719F;&#x77E5;&#x7684;&#x5305;&#x542B;&#x5C5E;&#x6027;&#x7684;&#x6811;&#x72B6;&#x7ED3;&#x6784;&#x8BED;&#x6CD5;&#x3002;</strong></p>
+<h2 id="3-&#x6CE8;&#x91CA;">3. <code>&#x6CE8;&#x91CA;</code></h2>
+<pre class="language-"><code>import React, { Component } from &apos;react&apos;;
+
+const name = &apos;yongfeng&apos;;
+const MyComponent = () =&gt; {
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Nav</span><span class="token punctuation">&gt;</span></span>
+    {/* &#x4E00;&#x822C;&#x6CE8;&#x91CA;, &#x7528; {} &#x5305;&#x56F4; */}
+    &lt;a
+      /* &#x591A;
+         &#x884C;
+         &#x6CE8;&#x91CA; */
+      className={ name ? &apos;a&apos; : &apos;b&apos; } // &#x884C;&#x5C3E;&#x6CE8;&#x91CA;
+      href=&quot;http://guoyongfeng.github.io/idoc&quot;
+    &gt; &#x6CE8;&#x91CA; <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Nav</span><span class="token punctuation">&gt;</span></span>
+};
+
+export default MyComponent;
+</code></pre><h2 id="4-&#x547D;&#x540D;">4. <code>&#x547D;&#x540D;</code></h2>
+<pre class="language-"><code>import React, { Component } from &apos;react&apos;;
+
+// 1. &#x7EC4;&#x4EF6;&#x547D;&#x540D;&#x9075;&#x5FAA;&#x9A7C;&#x5CF0;&#x547D;&#x540D;&#xFF0C;&#x9996;&#x5B57;&#x6BCD;&#x5927;&#x5199;
+class ComponentDemo extends Component {
+  render(){
+    return <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span> &#x4F60;&#x597D;&#xFF0C;&#x5144;&#x5F1F;... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  }
+}
+
+export default ComponentDemo;
+</code></pre><h2 id="5-&#x6839;&#x5143;&#x7D20;&#x4E2A;&#x6570;">5. <code>&#x6839;&#x5143;&#x7D20;&#x4E2A;&#x6570;</code></h2>
+<pre class="language-"><code>import React, { Component } from &apos;react&apos;;
+
+class ComponentDemo extends Component {
+  render(){
+    // &#x4EE5;&#x4E0B;&#x5199;&#x6CD5;&#x76F4;&#x63A5;&#x62A5;&#x9519;
+    return (
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+        hello
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span> hello h1 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+    );
+  }
+}
+
+export default ComponentDemo;
+</code></pre><p>React&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x9650;&#x5236;&#xFF0C; &#x7EC4;&#x4EF6;&#x53EA;&#x80FD;&#x6E32;&#x67D3;&#x5355;&#x4E2A;&#x6839;&#x8282;&#x70B9;&#x3002;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x8981;&#x8FD4;&#x56DE;&#x591A;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x5B83;&#x4EEC;&#x5FC5;&#x987B;&#x88AB;&#x5305;&#x542B;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x91CC;&#x3002;</p>
+<h2 id="6-&#x5D4C;&#x5165;&#x53D8;&#x91CF;">6. <code>&#x5D4C;&#x5165;&#x53D8;&#x91CF;</code></h2>
+<p><code>{}&#x82B1;&#x62EC;&#x53F7;&#x5185;&#x53EF;&#x4EE5;&#x5199;JS&#x903B;&#x8F91;&#xFF0C;&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#x90FD;&#x53EF;&#x4EE5;</code></p>
+<pre class="language-"><code>let person = <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Person</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span>{window.isLoggedIn</span> <span class="token attr-name">?</span> <span class="token attr-name">window.name</span> <span class="token attr-name">:</span> <span class="token attr-name">&apos;&apos;}</span> <span class="token punctuation">/&gt;</span></span>;
+</code></pre><h2 id="7-styles">7. <code>styles</code></h2>
+<pre class="language-"><code>import React, { Component } from &apos;react&apos;;
+
+class StyleDemo extends Component {
+  render(){
+    // 5. &#x5728;JS&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x7ED9;&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;&#x6837;&#x5F0F;
+    var MyComponentStyles = {
+        color: &apos;blue&apos;,
+        fontSize: &apos;28px&apos;
+    };
+
+    return (
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation">=</span>{MyComponentStyles}</span><span class="token punctuation">&gt;</span></span>
+          &#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FD9;&#x6837;&#x5199;&#x884C;&#x5185;&#x6837;&#x5F0F;
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    )
+  }
+}
+
+export default StyleDemo;
+</code></pre><h2 id="8-jsx-spread">8. <code>JSX SPREAD</code></h2>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>{...obj}</code> &#x6765;&#x6279;&#x91CF;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x5230;&#x7EC4;&#x4EF6;&#x7684;&#x5C5E;&#x6027;</p>
+<pre class="language-"><code>import React, { Component } from &apos;react&apos;;
+
+class SpreadDemo extends Component {
+  componentWillMount(){
+    console.log(this.props);
+  }
+  render(){
+    return <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span> {this.props.name} is a {this.props.type} <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>;
+  }
+}
+
+export default SpreadDemo;
+</code></pre><h2 id="9-&#x5C5E;&#x6027;&#x540D;&#x4E0D;&#x80FD;&#x548C;-js-&#x5173;&#x952E;&#x5B57;&#x51B2;&#x7A81;">9. <code>&#x5C5E;&#x6027;&#x540D;&#x4E0D;&#x80FD;&#x548C; js &#x5173;&#x952E;&#x5B57;&#x51B2;&#x7A81;</code></h2>
+<p>&#x4F8B;&#x5982;&#xFF1A;<code>className readOnly htmlfor</code></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02-初识React.html" class="navigation navigation-prev " aria-label="Previous page: 02-初识React">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="04-数据流.html" class="navigation navigation-next " aria-label="Next page: 04-数据流">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"03-JSX语法","level":"1.11.3","depth":2,"next":{"title":"04-数据流","level":"1.11.4","depth":2,"path":"10/04-数据流.md","ref":"./10/04-数据流.md","articles":[]},"previous":{"title":"02-初识React","level":"1.11.2","depth":2,"path":"10/02-初识React.md","ref":"./10/02-初识React.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"disqus":{"useIdentifier":false,"shortName":"为本书评论"},"github":{"url":"https://github.com/GuoYongfeng"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://guoyongfeng.github.io/book/"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"现代化前端工程师权威指南","language":"zh-hans","gitbook":"3.x.x","description":"现代化前端工程师权威指南"},"file":{"path":"10/03-JSX语法.md","mtime":"2016-12-12T02:57:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-12T15:30:22.123Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
