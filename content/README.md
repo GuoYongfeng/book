@@ -43,6 +43,11 @@
 
 你的打赏，是对我写作的认可和鼓励。
 
+<img width="400px" style="float: left;" src="./images/pay/weixin.jpg" alt="">
+
+<img width="200px" src="./images/pay/alipay.jpg" alt="">
+
+
 ## 勘误和反馈
 
 内容繁多，写稿时间仓促，如在阅读和编码调试过程中发现部分错误，请及时在issue中留言反馈，[戳我即可](https://github.com/GuoYongfeng/course-book/issues)。

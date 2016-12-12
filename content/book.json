@@ -1,6 +1,6 @@
 {
-  "title": "打造未来的前端架构师",
-  "description": "打造未来的前端架构师",
+  "title": "现代化前端工程师权威指南",
+  "description": "现代化前端工程师权威指南",
   "language": "zh-hans",
   "gitbook": "3.x.x",
   "plugins": [
@@ -27,7 +27,7 @@
       "facebook": false
     },
     "sitemap": {
-      "hostname": "http://guoyongfeng.github.io/course-book/"
+      "hostname": "http://guoyongfeng.github.io/book/"
     }
   }
 }
