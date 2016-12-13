@@ -26,10 +26,12 @@ npm -v
 
 - 升级系统
 - 升级xcode
+
 ```
 xcode-select -p
 xcode-select --install
 ```
+
 - 安装Homebrew
 前提是python和ruby安装好
 官网查看方法

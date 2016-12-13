@@ -2,8 +2,10 @@
 logs
 *.log
 npm-debug.log*
-
+.DS_Store
 content/_book
+
+gh-pages
 
 # Runtime data
 pids

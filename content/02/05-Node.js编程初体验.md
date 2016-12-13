@@ -14,7 +14,7 @@
 
 ### 起个web服务
 
-```
+``` javascript
 //http.js
 
 var http = require('http');
