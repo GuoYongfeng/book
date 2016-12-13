@@ -1,9 +1,9 @@
 
-## 使用query获取URL中的参数
+# 使用query获取URL中的参数
 
 我们可以将URL中访问的参数获取，并且应用到组件中。
 
-```
+``` javascript
 import React, { Component } from 'react';
 import { Router, Route, hashHistory, Link, IndexRoute } from 'react-router';
 
@@ -31,7 +31,8 @@ export default App;
 然后在url中输入`http://localhost:8080/#/?message=guoyongfeng`，页面中就会显示`guoyongfeng`。
 
 **另外，我们还可以在Link组件中设置pathname和query变量**
-```
+
+``` javascript
 import React, { Component } from 'react';
 import { Router, Route, hashHistory, Link, IndexRoute } from 'react-router';
 
