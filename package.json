@@ -31,7 +31,8 @@
     "deploy-wiki": "./scripts/deploy-wiki.sh",
     "generate-and-deploy": "npm run generate-gitbook && npm run generate-wiki && npm run deploy-gitbook && npm run deploy-wiki",
     "publish-gitbook": "./scripts/publish-gitbook.sh",
-    "publish": "npm run build && npm run deploy"
+    "publish": "npm run build && npm run deploy",
+    "port": "lsof -i :35729"
   },
   "repository": {
     "type": "git",

@@ -134,13 +134,16 @@
   - 12-将数据传入组件进行展
 
 - 第十四章：初入redux的世界
-  - 01-关于redux
-  - 02-quick-start
-  - 05-top-api-and-dispatch
-  - 06-subscribe
-  - 07-action-creator
-  - 08-react-redux
-  - 09-实战：开发一个标准的counter-app
+  - [01-概述](./14/01-概述.md)
+  - [02-从MVC到FLUX来理解redux](./14/02-从MVC到FLUX来理解redux.md)
+  - [03-redux 快速入门](./14/03-redux 快速入门.md)
+  - [04-理解action和action creator](./14/04-理解action和action creator.md)
+  - [05-redux中的reducer和纯函数](./14/05-redux中的reducer和纯函数.md)
+  - [06-store和数据管理](./14/06-store和数据管理.md)
+  - [07-redux提供的TOP API](./14/07-redux提供的TOP API.md)
+  - [08-redux 和 react 绑定使用](./14/08-redux 和 react 绑定使用.md)
+  - [09-实战：实现一个counter app](./14/09-实战：实现一个counter app.md)
+
 
 - 第十五章：深入redux的应用
   - 01-概述

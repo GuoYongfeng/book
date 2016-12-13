@@ -1,15 +1,3 @@
-<h1 style="font-size: 40px;text-align:center;color: #007cdc;">Redux快速上手</h1>
-
-> **重要提示：** 本教程配套示例代码请前往[redux-complete-sample](https://github.com/GuoYongfeng/redux-complete-sample)下载，课程中会有大量的示例操作，操作说明均基于这个配套的示例代码仓库，所以为了方便学习，请务必下载安装并启动。
-
-
-在开始往下阅读之前，我默认你已经学习了前面的课程，并且掌握了Webpack、ES6、React等知识的应用。
-
-在前面的课程，我们已经使用React创建了一个应用，但是在实际项目中，面对复杂业务逻辑的挑战，如何清晰高效的管理应用内的数据流动成为了关键。
-
-Flux思想已经在提出后得到逐步推广，并广泛应用到实际的项目中。facebook的flux实现，开源社区的reflux、redux等类库开始涌现并得到了广大开发者的认同和使用。
-
-Redux以其简单易用、文档齐全易懂等优点在开源社区得到开发者的一致好评，所以接下来让我们一起走进Redux，学习并将其使用到我们实际的项目开发中。
 
 ## 基本介绍
 
