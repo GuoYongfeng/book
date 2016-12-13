@@ -2,7 +2,7 @@
 
 本次教程内容的所有示例可以在[](https://github.com/GuoYongfeng/redux-complete-sample)
 
-```
+``` shell
 $ git clone git@github.com:GuoYongfeng/redux-complete-sample.git
 $ cd redux-complete-sample && npm install
 $ cd demo-redux-start
@@ -11,7 +11,7 @@ $ webpack-dev-server --progress --colors
 
 示例代码快速体验
 
-```
+``` javascript
 import { createStore } from 'redux';
 
 // 这是一个 reducer，形式为 (state, action) => state 的纯函数。描述了 action 如何把 state 转变成下一个 state。

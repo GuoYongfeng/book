@@ -18,7 +18,7 @@
     },
     "prism": {
       "css": [
-        "prismjs/themes/prism-okaidia.css"
+        "prismjs/themes/prism-tomorrow.css"
       ]
     },
     "sharing": {

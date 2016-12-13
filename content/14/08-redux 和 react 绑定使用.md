@@ -4,7 +4,7 @@
 ### 没有react-redux的写法
 
 封装一个组件，将组件和Redux做基本的组合
-```
+```javascript
 import { createStore } from 'redux';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
@@ -57,7 +57,7 @@ PureRender()
 
 `<Provider store>` 使组件层级中的 `connect()` 方法都能够获得 `Redux store`。正常情况下，你的根组件应该嵌套在 ``<Provider>` 中才能使用 `connect()` 方法。
 
-```
+```javascript
 ReactDOM.render(
   {/*  使组件层级中的 connect() 方法都能够获得 Redux store */}
   <Provider store={store}>
@@ -73,7 +73,7 @@ connect方法是用来连接 React 组件与 Redux store，连接操作不会改
 
 **使用react-redux的一个简单完整示例**
 
-```
+```javascript
 import React, { Component, PropTypes } from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'

@@ -28,7 +28,7 @@ dispatch 分发 action。这是触发 state 变化的惟一途径。
 
 示例：
 
-```
+```javascript
 import { createStore } from 'redux'
 
 // reducer
@@ -64,7 +64,7 @@ store.dispatch(addTodo('Read about the middleware'))
 
 示例
 
-```
+```javascript
 import { createStore } from 'redux'
 
 // reducer

@@ -24,13 +24,54 @@ Atom 有很多选项和偏好设置，你可以在设置界面修改它们。
 
 ![](https://atom-china.org/uploads/default/_optimized/f67/38e/5fd8580ee2_690x479.png)
 
+### 左侧目录树的修改
+
+在 `settings` 中选择 `open config folder`，然后修改 `style.less` 文件，比如：
+
+``` stylesheet
+.tree-view {
+    font-size: 16px;
+}
+
+```
+
 ## 插件
 
-- sentui
-- file-icons
-- markdown-preview
-- autocomplete-paths
-- docblockr
-- emmet
-- minimap
-- react
+### tool-bar & tool-bar-main
+
+这两个小插件可以让你的编辑器上方出现一行快捷操作小按钮，绝对是贴心服务。还可以设置大小和位置，如果不想出现在上方，出现在左侧下侧都可以，随你定制。
+
+### file-icons
+
+丰富文件的 `icon` 前缀，绝对是赏心悦目的感受。
+
+### markdown-preview
+
+可以在 `Atom` 编辑器中直接预览 `markdown` 文件。
+
+### autocomplete-paths
+
+自动提示路径和文件名，很方便使用
+
+### docblockr
+
+可以产出标准化的代码注释格式，效果：
+
+```
+/**
+ * [main description]
+ * @return {[type]} [description]
+ */
+```
+
+### emmet
+
+支持 `zen coding` 的方式进行快捷代码书写，相信我，这绝对是个编码的享受。
+
+### minimap
+
+让编辑器右侧出现 `minimap`，方便快速查看内容，小巧性感。
+
+### platformio-ide-terminal
+
+知道这个是干什么的么，有了这个插件，你可以直接在 `Atom` 中非常方便的呼出 `terminal` 终端，不用来回切换，在 `Atom` 中编码调试，一站式搞定，一个字：就是爽的飞起。

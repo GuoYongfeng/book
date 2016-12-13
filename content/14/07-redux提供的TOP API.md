@@ -10,7 +10,7 @@
 
 **我们可以试着模拟 createStore，深入了解其原理**
 
-```
+```javascript
 // reducer 纯函数，具体的action执行逻辑
 const counter = (state = 0, action) => {
   switch (action.type) {
@@ -74,7 +74,8 @@ document.addEventListener('click', function( e ){
 **示例如下**
 
 代码清单：`reducer/todos.js`
-```
+
+```javascript
 export default function todos(state = [], action) {
   switch (action.type) {
   case 'ADD_TODO':
@@ -86,7 +87,8 @@ export default function todos(state = [], action) {
 ```
 
 代码清单：`reducer/counter.js`
-```
+
+```javascript
 export default function counter(state = 0, action) {
   switch (action.type) {
   case 'INCREMENT':
@@ -100,7 +102,8 @@ export default function counter(state = 0, action) {
 ```
 
 代码清单：`reducers/index.js`
-```
+
+```javascript
 import { combineReducers } from 'redux'
 import todos from './todos'
 import counter from './counter'
@@ -112,7 +115,7 @@ export default combineReducers({
 ```
 
 代码清单：`App.js`
-```
+```javascript
 import { createStore } from 'redux'
 import reducer from './reducer/index.js'
 
