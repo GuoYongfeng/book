@@ -21,7 +21,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
                 
             
                 
@@ -2626,50 +2626,52 @@
                                 
                                 <h2 id="&#x5FEB;&#x901F;&#x4E0A;&#x624B;">&#x5FEB;&#x901F;&#x4E0A;&#x624B;</h2>
 <p>&#x672C;&#x6B21;&#x6559;&#x7A0B;&#x5185;&#x5BB9;&#x7684;&#x6240;&#x6709;&#x793A;&#x4F8B;&#x53EF;&#x4EE5;&#x5728;<a href="https://github.com/GuoYongfeng/redux-complete-sample" target="_blank"></a></p>
-<pre class="language-"><code>$ git clone git@github.com:GuoYongfeng/redux-complete-sample.git
+<pre class="language-"><code class="lang-shell">$ git clone git@github.com:GuoYongfeng/redux-complete-sample.git
 $ cd redux-complete-sample &amp;&amp; npm install
 $ cd demo-redux-start
 $ webpack-dev-server --progress --colors
-</code></pre><p>&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x5FEB;&#x901F;&#x4F53;&#x9A8C;</p>
-<pre class="language-"><code>import { createStore } from &apos;redux&apos;;
-
-// &#x8FD9;&#x662F;&#x4E00;&#x4E2A; reducer&#xFF0C;&#x5F62;&#x5F0F;&#x4E3A; (state, action) =&gt; state &#x7684;&#x7EAF;&#x51FD;&#x6570;&#x3002;&#x63CF;&#x8FF0;&#x4E86; action &#x5982;&#x4F55;&#x628A; state &#x8F6C;&#x53D8;&#x6210;&#x4E0B;&#x4E00;&#x4E2A; state&#x3002;
-
-// state &#x7684;&#x5F62;&#x5F0F;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x3001;&#x6570;&#x7EC4;&#x3001;&#x5BF9;&#x8C61;&#x3001;
-// &#x751A;&#x81F3;&#x662F; Immutable.js &#x751F;&#x6210;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;&#x60DF;&#x4E00;&#x7684;&#x8981;&#x70B9;&#x662F;
-// &#x5F53; state &#x53D8;&#x5316;&#x65F6;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#x5168;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4FEE;&#x6539;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x3002;
-function counter(state = 0, action) {
-  switch (action.type) {
-  case &apos;INCREMENT&apos;:
-    return state + 1;
-  case &apos;DECREMENT&apos;:
-    return state - 1;
-  default:
-    return state;
-  }
-}
-
-// &#x521B;&#x5EFA; Redux store &#x6765;&#x5B58;&#x653E;&#x5E94;&#x7528;&#x7684;&#x72B6;&#x6001;&#x3002;
-// API &#x662F; { subscribe, dispatch, getState }&#x3002;
-let store = createStore(counter);
-
-// &#x4E00;&#x4E2A;&#x5355;&#x7EAF;&#x6E32;&#x67D3;&#x9875;&#x9762;&#x5185;&#x5BB9;&#x7684;&#x51FD;&#x6570;
-const PureRender = () =&gt; {
-  document.body.innerText = store.getState();
-}
-
-// &#x53EF;&#x4EE5;&#x624B;&#x52A8;&#x8BA2;&#x9605;&#x66F4;&#x65B0;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4E8B;&#x4EF6;&#x7ED1;&#x5B9A;&#x5230;&#x89C6;&#x56FE;&#x5C42;&#x3002;
-store.subscribe(PureRender);
-// &#x6267;&#x884C;&#x6E32;&#x67D3;&#x51FD;&#x6570;
-PureRender();
-
-// &#x6539;&#x53D8;&#x5185;&#x90E8; state &#x60DF;&#x4E00;&#x65B9;&#x6CD5;&#x662F; dispatch &#x4E00;&#x4E2A; action&#x3002;
-// action &#x53EF;&#x4EE5;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x7528;&#x65E5;&#x8BB0;&#x8BB0;&#x5F55;&#x548C;&#x50A8;&#x5B58;&#x4E0B;&#x6765;&#xFF0C;&#x540E;&#x671F;&#x8FD8;&#x53EF;&#x4EE5;&#x4EE5;&#x56DE;&#x653E;&#x7684;&#x65B9;&#x5F0F;&#x6267;&#x884C;
-document.addEventListener(&apos;click&apos;, function( e ){
-  // store dispatch &#x8C03;&#x5EA6;&#x5206;&#x53D1;&#x4E00;&#x4E2A; action&#xFF08;fire&#xFF09;
-  store.dispatch({ type: &apos;DECREMENT&apos;});
-})
 </code></pre>
+<p>&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x5FEB;&#x901F;&#x4F53;&#x9A8C;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> createStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x8FD9;&#x662F;&#x4E00;&#x4E2A; reducer&#xFF0C;&#x5F62;&#x5F0F;&#x4E3A; (state, action) =&gt; state &#x7684;&#x7EAF;&#x51FD;&#x6570;&#x3002;&#x63CF;&#x8FF0;&#x4E86; action &#x5982;&#x4F55;&#x628A; state &#x8F6C;&#x53D8;&#x6210;&#x4E0B;&#x4E00;&#x4E2A; state&#x3002;</span>
+
+<span class="token comment" spellcheck="true">// state &#x7684;&#x5F62;&#x5F0F;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x3001;&#x6570;&#x7EC4;&#x3001;&#x5BF9;&#x8C61;&#x3001;</span>
+<span class="token comment" spellcheck="true">// &#x751A;&#x81F3;&#x662F; Immutable.js &#x751F;&#x6210;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;&#x60DF;&#x4E00;&#x7684;&#x8981;&#x70B9;&#x662F;</span>
+<span class="token comment" spellcheck="true">// &#x5F53; state &#x53D8;&#x5316;&#x65F6;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#x5168;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4FEE;&#x6539;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x3002;</span>
+<span class="token keyword">function</span> <span class="token function">counter</span><span class="token punctuation">(</span>state <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">case</span> <span class="token string">&apos;INCREMENT&apos;</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> state <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">case</span> <span class="token string">&apos;DECREMENT&apos;</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> state <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">default</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// &#x521B;&#x5EFA; Redux store &#x6765;&#x5B58;&#x653E;&#x5E94;&#x7528;&#x7684;&#x72B6;&#x6001;&#x3002;</span>
+<span class="token comment" spellcheck="true">// API &#x662F; { subscribe, dispatch, getState }&#x3002;</span>
+<span class="token keyword">let</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>counter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x4E00;&#x4E2A;&#x5355;&#x7EAF;&#x6E32;&#x67D3;&#x9875;&#x9762;&#x5185;&#x5BB9;&#x7684;&#x51FD;&#x6570;</span>
+<span class="token keyword">const</span> PureRender <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>innerText <span class="token operator">=</span> store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// &#x53EF;&#x4EE5;&#x624B;&#x52A8;&#x8BA2;&#x9605;&#x66F4;&#x65B0;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4E8B;&#x4EF6;&#x7ED1;&#x5B9A;&#x5230;&#x89C6;&#x56FE;&#x5C42;&#x3002;</span>
+store<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span>PureRender<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// &#x6267;&#x884C;&#x6E32;&#x67D3;&#x51FD;&#x6570;</span>
+<span class="token function">PureRender</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x6539;&#x53D8;&#x5185;&#x90E8; state &#x60DF;&#x4E00;&#x65B9;&#x6CD5;&#x662F; dispatch &#x4E00;&#x4E2A; action&#x3002;</span>
+<span class="token comment" spellcheck="true">// action &#x53EF;&#x4EE5;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x7528;&#x65E5;&#x8BB0;&#x8BB0;&#x5F55;&#x548C;&#x50A8;&#x5B58;&#x4E0B;&#x6765;&#xFF0C;&#x540E;&#x671F;&#x8FD8;&#x53EF;&#x4EE5;&#x4EE5;&#x56DE;&#x653E;&#x7684;&#x65B9;&#x5F0F;&#x6267;&#x884C;</span>
+document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&apos;click&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span> e <span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// store dispatch &#x8C03;&#x5EA6;&#x5206;&#x53D1;&#x4E00;&#x4E2A; action&#xFF08;fire&#xFF09;</span>
+  store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token string">&apos;DECREMENT&apos;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+
                                 
                                 </section>
                             
@@ -2712,7 +2714,7 @@ document.addEventListener(&apos;click&apos;, function( e ){
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"03-redux 快速入门","level":"1.15.3","depth":2,"next":{"title":"04-理解action和action creator","level":"1.15.4","depth":2,"path":"14/04-理解action和action creator.md","ref":"./14/04-理解action和action creator.md","articles":[]},"previous":{"title":"02-从MVC到FLUX来理解redux","level":"1.15.2","depth":2,"path":"14/02-从MVC到FLUX来理解redux.md","ref":"./14/02-从MVC到FLUX来理解redux.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"disqus":{"useIdentifier":false,"shortName":"为本书评论"},"github":{"url":"https://github.com/GuoYongfeng"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://guoyongfeng.github.io/book/"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"现代化前端工程师权威指南","language":"zh-hans","gitbook":"3.x.x","description":"现代化前端工程师权威指南"},"file":{"path":"14/03-redux 快速入门.md","mtime":"2016-12-13T07:44:48.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-13T08:52:04.343Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"03-redux 快速入门","level":"1.15.3","depth":2,"next":{"title":"04-理解action和action creator","level":"1.15.4","depth":2,"path":"14/04-理解action和action creator.md","ref":"./14/04-理解action和action creator.md","articles":[]},"previous":{"title":"02-从MVC到FLUX来理解redux","level":"1.15.2","depth":2,"path":"14/02-从MVC到FLUX来理解redux.md","ref":"./14/02-从MVC到FLUX来理解redux.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"disqus":{"useIdentifier":false,"shortName":"为本书评论"},"github":{"url":"https://github.com/GuoYongfeng"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://guoyongfeng.github.io/book/"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"现代化前端工程师权威指南","language":"zh-hans","gitbook":"3.x.x","description":"现代化前端工程师权威指南"},"file":{"path":"14/03-redux 快速入门.md","mtime":"2016-12-13T09:23:38.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-13T14:52:13.928Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -21,7 +21,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
                 
             
                 
@@ -2626,23 +2626,25 @@
                                 
                                 <h3 id="reducer">Reducer</h3>
 <p>&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E0B; Javascript &#x4E2D; <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce_clone" target="_blank">Array.prototype.reduce</a> &#x7684;&#x7528;&#x6CD5;&#xFF1A;</p>
-<pre class="language-"><code>const initState = &apos;&apos;;
-const actions = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];
-// &#x4F20;&#x5165;&#x5F53;&#x524D;&#x7684; state &#x548C; action &#xFF0C;&#x8FD4;&#x56DE;&#x65B0;&#x7684; state
-const newState = actions.reduce((curState, action) =&gt; curState + action);
-console.log( newState );
-</code></pre><p>&#x5BF9;&#x5E94;&#x7684;&#x7406;&#x89E3;&#xFF0C;Redux &#x4E2D;&#x7684; reducer &#x662F;&#x4E00;&#x4E2A;&#x7EAF;&#x51FD;&#x6570;&#xFF0C;&#x4F20;&#x5165;state&#x548C;action&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;state tree&#xFF0C;&#x7B80;&#x5355;&#x800C;&#x7EAF;&#x7CB9;&#x7684;&#x5B8C;&#x6210;&#x67D0;&#x4E00;&#x4EF6;&#x5177;&#x4F53;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x6CA1;&#x6709;&#x4F9D;&#x8D56;&#xFF0C;<strong>&#x7B80;&#x5355;&#x800C;&#x7EAF;&#x7CB9;&#x662F;&#x5B83;&#x7684;&#x6807;&#x7B7E;</strong>&#x3002;</p>
-<pre class="language-"><code>const counter = (state = 0, action) =&gt; {
-  switch (action.type) {
-      case &apos;INCREMENT&apos;:
-        return state + 1;
-      case &apos;DECREMENT&apos;:
-        return state - 1;
-      default:
-        return state;
-  }
-}
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">const</span> initState <span class="token operator">=</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> actions <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;a&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;b&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;c&apos;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// &#x4F20;&#x5165;&#x5F53;&#x524D;&#x7684; state &#x548C; action &#xFF0C;&#x8FD4;&#x56DE;&#x65B0;&#x7684; state</span>
+<span class="token keyword">const</span> newState <span class="token operator">=</span> actions<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>curState<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> curState <span class="token operator">+</span> action<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> newState <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
+<p>&#x5BF9;&#x5E94;&#x7684;&#x7406;&#x89E3;&#xFF0C;Redux &#x4E2D;&#x7684; reducer &#x662F;&#x4E00;&#x4E2A;&#x7EAF;&#x51FD;&#x6570;&#xFF0C;&#x4F20;&#x5165;state&#x548C;action&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;state tree&#xFF0C;&#x7B80;&#x5355;&#x800C;&#x7EAF;&#x7CB9;&#x7684;&#x5B8C;&#x6210;&#x67D0;&#x4E00;&#x4EF6;&#x5177;&#x4F53;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x6CA1;&#x6709;&#x4F9D;&#x8D56;&#xFF0C;<strong>&#x7B80;&#x5355;&#x800C;&#x7EAF;&#x7CB9;&#x662F;&#x5B83;&#x7684;&#x6807;&#x7B7E;</strong>&#x3002;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">const</span> counter <span class="token operator">=</span> <span class="token punctuation">(</span>state <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">case</span> <span class="token string">&apos;INCREMENT&apos;</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> state <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+      <span class="token keyword">case</span> <span class="token string">&apos;DECREMENT&apos;</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> state <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+      <span class="token keyword">default</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
                                 
                                 </section>
                             
@@ -2685,7 +2687,7 @@ console.log( newState );
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"05-redux中的reducer和纯函数","level":"1.15.5","depth":2,"next":{"title":"06-store和数据管理","level":"1.15.6","depth":2,"path":"14/06-store和数据管理.md","ref":"./14/06-store和数据管理.md","articles":[]},"previous":{"title":"04-理解action和action creator","level":"1.15.4","depth":2,"path":"14/04-理解action和action creator.md","ref":"./14/04-理解action和action creator.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"disqus":{"useIdentifier":false,"shortName":"为本书评论"},"github":{"url":"https://github.com/GuoYongfeng"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://guoyongfeng.github.io/book/"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"现代化前端工程师权威指南","language":"zh-hans","gitbook":"3.x.x","description":"现代化前端工程师权威指南"},"file":{"path":"14/05-redux中的reducer和纯函数.md","mtime":"2016-12-13T07:46:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-13T08:52:04.343Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"05-redux中的reducer和纯函数","level":"1.15.5","depth":2,"next":{"title":"06-store和数据管理","level":"1.15.6","depth":2,"path":"14/06-store和数据管理.md","ref":"./14/06-store和数据管理.md","articles":[]},"previous":{"title":"04-理解action和action creator","level":"1.15.4","depth":2,"path":"14/04-理解action和action creator.md","ref":"./14/04-理解action和action creator.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"disqus":{"useIdentifier":false,"shortName":"为本书评论"},"github":{"url":"https://github.com/GuoYongfeng"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://guoyongfeng.github.io/book/"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"现代化前端工程师权威指南","language":"zh-hans","gitbook":"3.x.x","description":"现代化前端工程师权威指南"},"file":{"path":"14/05-redux中的reducer和纯函数.md","mtime":"2016-12-13T13:39:33.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-13T14:52:13.928Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

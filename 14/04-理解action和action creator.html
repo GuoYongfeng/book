@@ -21,7 +21,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
                 
             
                 
@@ -2626,35 +2626,39 @@
                                 
                                 <h3 id="action--action-creator">Action &amp; Action Creator</h3>
 <p>&#x5728; Redux &#x4E2D;&#xFF0C;&#x6539;&#x53D8; State &#x53EA;&#x80FD;&#x901A;&#x8FC7; action&#xFF0C;&#x5B83;&#x662F; store &#x6570;&#x636E;&#x7684;&#x552F;&#x4E00;&#x6765;&#x6E90;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#x4F60;&#x4F1A;&#x901A;&#x8FC7; store.dispatch() &#x5C06; action &#x4F20;&#x5230; store&#x3002;&#x3002;&#x5E76;&#x4E14;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A; action &#x90FD;&#x5FC5;&#x987B;&#x662F; Javascript &#x7684;&#x7B80;&#x5355;&#x5BF9;&#x8C61;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
-<pre class="language-"><code>{
-  type: &apos;ADD_TODO&apos;,
-  text: &apos;Learn Redux&apos;
-}
-</code></pre><p>Redux &#x8981;&#x6C42; action &#x662F;&#x53EF;&#x4EE5;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#x7684;&#xFF0C;&#x4F7F;&#x8FD9;&#x5F97;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x72B6;&#x6001;&#x4FDD;&#x5B58;&#x3001;&#x56DE;&#x653E;&#x3001;Undo &#x4E4B;&#x7C7B;&#x7684;&#x529F;&#x80FD;&#x53EF;&#x4EE5;&#x88AB;&#x5B9E;&#x73B0;&#x3002;&#x56E0;&#x6B64;&#xFF0C;action &#x4E2D;&#x4E0D;&#x80FD;&#x5305;&#x542B;&#x8BF8;&#x5982;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x8FD9;&#x6837;&#x7684;&#x4E0D;&#x53EF;&#x5E8F;&#x5217;&#x5316;&#x5B57;&#x6BB5;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> <span class="token string">&apos;ADD_TODO&apos;</span><span class="token punctuation">,</span>
+  text<span class="token punctuation">:</span> <span class="token string">&apos;Learn Redux&apos;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Redux &#x8981;&#x6C42; action &#x662F;&#x53EF;&#x4EE5;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#x7684;&#xFF0C;&#x4F7F;&#x8FD9;&#x5F97;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x72B6;&#x6001;&#x4FDD;&#x5B58;&#x3001;&#x56DE;&#x653E;&#x3001;Undo &#x4E4B;&#x7C7B;&#x7684;&#x529F;&#x80FD;&#x53EF;&#x4EE5;&#x88AB;&#x5B9E;&#x73B0;&#x3002;&#x56E0;&#x6B64;&#xFF0C;action &#x4E2D;&#x4E0D;&#x80FD;&#x5305;&#x542B;&#x8BF8;&#x5982;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x8FD9;&#x6837;&#x7684;&#x4E0D;&#x53EF;&#x5E8F;&#x5217;&#x5316;&#x5B57;&#x6BB5;&#x3002;</p>
 <p>action &#x7684;&#x683C;&#x5F0F;&#x662F;&#x6709;&#x5EFA;&#x8BAE;&#x89C4;&#x8303;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x5B57;&#x6BB5;&#xFF1A;</p>
-<pre class="language-"><code>{
-  type: &apos;ADD_TODO&apos;,
-  payload: {
-    text: &apos;Do something.&apos;
-  },
-  `meta: {}`
-}
-</code></pre><p>&#x5982;&#x679C; action &#x7528;&#x6765;&#x8868;&#x793A;&#x51FA;&#x9519;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5219;&#x53EF;&#x80FD;&#x4E3A;&#xFF1A;</p>
-<pre class="language-"><code>{
-  type: &apos;ADD_TODO&apos;,
-  payload: new Error(),
-  error: true
-}
-</code></pre><p>type &#x662F;&#x5FC5;&#x987B;&#x8981;&#x6709;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5176;&#x4ED6;&#x90FD;&#x662F;&#x53EF;&#x9009;&#x7684;&#x3002;&#x5B8C;&#x6574;&#x5EFA;&#x8BAE;&#x8BF7;&#x53C2;&#x8003; <a href="https://github.com/acdlite/flux-standard-action" target="_blank">Flux Standard Action(FSA)</a> &#x5B9A;&#x4E49;&#x3002;&#x5DF2;&#x7ECF;&#x6709;&#x4E0D;&#x5C11;&#x7B2C;&#x4E09;&#x65B9;&#x6A21;&#x5757;&#x662F;&#x57FA;&#x4E8E; FSA &#x7684;&#x7EA6;&#x5B9A;&#x6765;&#x5F00;&#x53D1;&#x4E86;&#x3002;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> <span class="token string">&apos;ADD_TODO&apos;</span><span class="token punctuation">,</span>
+  payload<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    text<span class="token punctuation">:</span> <span class="token string">&apos;Do something.&apos;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token template-string"><span class="token string">`meta: {}`</span></span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5982;&#x679C; action &#x7528;&#x6765;&#x8868;&#x793A;&#x51FA;&#x9519;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5219;&#x53EF;&#x80FD;&#x4E3A;&#xFF1A;</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> <span class="token string">&apos;ADD_TODO&apos;</span><span class="token punctuation">,</span>
+  payload<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  error<span class="token punctuation">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>type &#x662F;&#x5FC5;&#x987B;&#x8981;&#x6709;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5176;&#x4ED6;&#x90FD;&#x662F;&#x53EF;&#x9009;&#x7684;&#x3002;&#x5B8C;&#x6574;&#x5EFA;&#x8BAE;&#x8BF7;&#x53C2;&#x8003; <a href="https://github.com/acdlite/flux-standard-action" target="_blank">Flux Standard Action(FSA)</a> &#x5B9A;&#x4E49;&#x3002;&#x5DF2;&#x7ECF;&#x6709;&#x4E0D;&#x5C11;&#x7B2C;&#x4E09;&#x65B9;&#x6A21;&#x5757;&#x662F;&#x57FA;&#x4E8E; FSA &#x7684;&#x7EA6;&#x5B9A;&#x6765;&#x5F00;&#x53D1;&#x4E86;&#x3002;</p>
 <p><strong>Action Creator</strong></p>
 <p>&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x521B;&#x5EFA; action &#x5BF9;&#x8C61;&#x5F88;&#x5C11;&#x7528;&#x8FD9;&#x79CD;&#x6BCF;&#x6B21;&#x76F4;&#x63A5;&#x58F0;&#x660E;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x66F4;&#x591A;&#x5730;&#x662F;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x521B;&#x5EFA;&#x51FD;&#x6570;&#x3002;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x88AB;&#x79F0;&#x4E3A;Action Creator&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
-<pre class="language-"><code>function addTodo(text) {
-  return {
-    type: ADD_TODO,
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">function</span> <span class="token function">addTodo</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> ADD_TODO<span class="token punctuation">,</span>
     text
-  };
-}
-</code></pre><p>Action Creator &#x770B;&#x8D77;&#x6765;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x7ED3;&#x5408;&#x4E0A; Middleware &#x5C31;&#x53EF;&#x4EE5;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x7075;&#x6D3B;&#xFF0C;&#x540E;&#x9762;&#x4F1A;&#x4E13;&#x95E8;&#x8BB2; Middleware &#x3002;</p>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Action Creator &#x770B;&#x8D77;&#x6765;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x7ED3;&#x5408;&#x4E0A; Middleware &#x5C31;&#x53EF;&#x4EE5;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x7075;&#x6D3B;&#xFF0C;&#x540E;&#x9762;&#x4F1A;&#x4E13;&#x95E8;&#x8BB2; Middleware &#x3002;</p>
 
                                 
                                 </section>
@@ -2698,7 +2702,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"04-理解action和action creator","level":"1.15.4","depth":2,"next":{"title":"05-redux中的reducer和纯函数","level":"1.15.5","depth":2,"path":"14/05-redux中的reducer和纯函数.md","ref":"./14/05-redux中的reducer和纯函数.md","articles":[]},"previous":{"title":"03-redux 快速入门","level":"1.15.3","depth":2,"path":"14/03-redux 快速入门.md","ref":"./14/03-redux 快速入门.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"disqus":{"useIdentifier":false,"shortName":"为本书评论"},"github":{"url":"https://github.com/GuoYongfeng"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://guoyongfeng.github.io/book/"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"现代化前端工程师权威指南","language":"zh-hans","gitbook":"3.x.x","description":"现代化前端工程师权威指南"},"file":{"path":"14/04-理解action和action creator.md","mtime":"2016-12-13T07:45:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-13T08:52:04.343Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"04-理解action和action creator","level":"1.15.4","depth":2,"next":{"title":"05-redux中的reducer和纯函数","level":"1.15.5","depth":2,"path":"14/05-redux中的reducer和纯函数.md","ref":"./14/05-redux中的reducer和纯函数.md","articles":[]},"previous":{"title":"03-redux 快速入门","level":"1.15.3","depth":2,"path":"14/03-redux 快速入门.md","ref":"./14/03-redux 快速入门.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"disqus":{"useIdentifier":false,"shortName":"为本书评论"},"github":{"url":"https://github.com/GuoYongfeng"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://guoyongfeng.github.io/book/"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"现代化前端工程师权威指南","language":"zh-hans","gitbook":"3.x.x","description":"现代化前端工程师权威指南"},"file":{"path":"14/04-理解action和action creator.md","mtime":"2016-12-13T13:39:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-13T14:52:13.928Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

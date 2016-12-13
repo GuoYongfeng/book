@@ -86,7 +86,7 @@ class Foo {
 ```js
 import _classCallCheck from "babel-runtime/helpers/classCallCheck";
 import _createClass from "babel-runtime/helpers/createClass";
-
+babel
 let Foo = function () {
   function Foo() {
     _classCallCheck(this, Foo);
@@ -102,5 +102,3 @@ let Foo = function () {
 ```
 
 这样就不需要把 `_classCallCheck` 和 `_createClass` 这两个助手方法放进每一个需要的文件里去了。
-
-* * *

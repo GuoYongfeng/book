@@ -21,7 +21,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
                 
             
                 
@@ -2630,106 +2630,111 @@
 <p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A; Redux store &#x6765;&#x4EE5;&#x5B58;&#x653E;&#x5E94;&#x7528;&#x4E2D;&#x6240;&#x6709;&#x7684; state&#xFF0C;&#x5E94;&#x7528;&#x4E2D;&#x5E94;&#x6709;&#x4E14;&#x4EC5;&#x6709;&#x4E00;&#x4E2A; store&#x3002;
 &#x8FD9;&#x4E2A;API&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;store&#xFF0C;&#x8FD9;&#x4E2A;store&#x4E2D;&#x4FDD;&#x5B58;&#x4E86;&#x5E94;&#x7528;&#x6240;&#x6709; state &#x7684;&#x5BF9;&#x8C61;&#x3002;&#x6539;&#x53D8; state &#x7684;&#x60DF;&#x4E00;&#x65B9;&#x6CD5;&#x662F; dispatch action&#x3002;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5; subscribe &#x76D1;&#x542C; state &#x7684;&#x53D8;&#x5316;&#xFF0C;&#x7136;&#x540E;&#x66F4;&#x65B0; UI&#x3002;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;</p>
 <p><strong>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BD5;&#x7740;&#x6A21;&#x62DF; createStore&#xFF0C;&#x6DF1;&#x5165;&#x4E86;&#x89E3;&#x5176;&#x539F;&#x7406;</strong></p>
-<pre class="language-"><code>// reducer &#x7EAF;&#x51FD;&#x6570;&#xFF0C;&#x5177;&#x4F53;&#x7684;action&#x6267;&#x884C;&#x903B;&#x8F91;
-const counter = (state = 0, action) =&gt; {
-  switch (action.type) {
-      case &apos;INCREMENT&apos;:
-        return state + 1;
-      case &apos;DECREMENT&apos;:
-        return state - 1;
-      default:
-        return state;
-  }
-}
+<pre class="language-"><code class="lang-javascript"><span class="token comment" spellcheck="true">// reducer &#x7EAF;&#x51FD;&#x6570;&#xFF0C;&#x5177;&#x4F53;&#x7684;action&#x6267;&#x884C;&#x903B;&#x8F91;</span>
+<span class="token keyword">const</span> counter <span class="token operator">=</span> <span class="token punctuation">(</span>state <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">case</span> <span class="token string">&apos;INCREMENT&apos;</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> state <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+      <span class="token keyword">case</span> <span class="token string">&apos;DECREMENT&apos;</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> state <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+      <span class="token keyword">default</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-// &#x6A21;&#x62DF;create store&#xFF0C;&#x4E86;&#x89E3;&#x5176;&#x539F;&#x7406;
-const createStore = (reducer) =&gt; {
-  let state;
-  let listeners = [];
+<span class="token comment" spellcheck="true">// &#x6A21;&#x62DF;create store&#xFF0C;&#x4E86;&#x89E3;&#x5176;&#x539F;&#x7406;</span>
+<span class="token keyword">const</span> createStore <span class="token operator">=</span> <span class="token punctuation">(</span>reducer<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> state<span class="token punctuation">;</span>
+  <span class="token keyword">let</span> listeners <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-  const getState = () =&gt; state;
+  <span class="token keyword">const</span> getState <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">;</span>
 
-  const dispatch = (action) =&gt; {
-    state = reducer(state, action);
-    listeners.forEach(listener =&gt; listener());
-  }
+  <span class="token keyword">const</span> dispatch <span class="token operator">=</span> <span class="token punctuation">(</span>action<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    state <span class="token operator">=</span> <span class="token function">reducer</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    listeners<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>listener <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">listener</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  const subscribe = (listener) =&gt; {
-      listeners.push(listener);
-      return () =&gt; {
-        listeners = listeners.filter(item =&gt; item !== listener);
-      }
-  }
+  <span class="token keyword">const</span> subscribe <span class="token operator">=</span> <span class="token punctuation">(</span>listener<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+      listeners<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>listener<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+        listeners <span class="token operator">=</span> listeners<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>item <span class="token operator">=</span><span class="token operator">&gt;</span> item <span class="token operator">!==</span> listener<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
 
-  dispatch({});
+  <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  return { getState, dispatch, subscribe };
-}
+  <span class="token keyword">return</span> <span class="token punctuation">{</span> getState<span class="token punctuation">,</span> dispatch<span class="token punctuation">,</span> subscribe <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-const store = createStore(counter);
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>counter<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// view &#x5BF9;&#x5E94;&#x5230;React&#x91CC;&#x9762;&#x7684;component
-const PureRender = () =&gt; {
-  document.body.innerText = store.getState();
-}
+<span class="token comment" spellcheck="true">// view &#x5BF9;&#x5E94;&#x5230;React&#x91CC;&#x9762;&#x7684;component</span>
+<span class="token keyword">const</span> PureRender <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>innerText <span class="token operator">=</span> store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// store subscribe &#x8BA2;&#x9605;&#x6216;&#x662F;&#x76D1;&#x542C;view&#xFF08;on&#xFF09;
-store.subscribe(PureRender);
-PureRender();
+<span class="token comment" spellcheck="true">// store subscribe &#x8BA2;&#x9605;&#x6216;&#x662F;&#x76D1;&#x542C;view&#xFF08;on&#xFF09;</span>
+store<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span>PureRender<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">PureRender</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-document.addEventListener(&apos;click&apos;, function( e ){
-  // store dispatch &#x8C03;&#x5EA6;&#x5206;&#x53D1;&#x4E00;&#x4E2A; action&#xFF08;fire&#xFF09;
-  store.dispatch({ type: &apos;DECREMENT&apos;});
-})
-</code></pre><h3 id="combinereducers">combineReducers</h3>
+document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&apos;click&apos;</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span> e <span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// store dispatch &#x8C03;&#x5EA6;&#x5206;&#x53D1;&#x4E00;&#x4E2A; action&#xFF08;fire&#xFF09;</span>
+  store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token string">&apos;DECREMENT&apos;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="combinereducers">combineReducers</h3>
 <p>&#x8C03;&#x7528;&#x65B9;&#x5F0F;&#xFF1A;combineReducers(reducers)</p>
 <p>&#x968F;&#x7740;&#x5E94;&#x7528;&#x53D8;&#x5F97;&#x590D;&#x6742;&#xFF0C;&#x9700;&#x8981;&#x5BF9; reducer &#x51FD;&#x6570;&#x8FDB;&#x884C;&#x62C6;&#x5206;&#xFF0C;&#x62C6;&#x5206;&#x540E;&#x7684;&#x6BCF;&#x4E00;&#x5757;&#x72EC;&#x7ACB;&#x8D1F;&#x8D23;&#x7BA1;&#x7406; state &#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;&#x628A;&#x4E00;&#x4E2A;&#x7531;&#x591A;&#x4E2A;&#x4E0D;&#x540C; reducer &#x51FD;&#x6570;&#x4F5C;&#x4E3A; value &#x7684; object&#xFF0C;&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#x6700;&#x7EC8;&#x7684; reducer &#x51FD;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x5BF9;&#x8FD9;&#x4E2A; reducer &#x8C03;&#x7528; createStore&#x3002;</p>
 <p><strong>&#x793A;&#x4F8B;&#x5982;&#x4E0B;</strong></p>
 <p>&#x4EE3;&#x7801;&#x6E05;&#x5355;&#xFF1A;<code>reducer/todos.js</code></p>
-<pre class="language-"><code>export default function todos(state = [], action) {
-  switch (action.type) {
-  case &apos;ADD_TODO&apos;:
-    return state.concat([action.text])
-  default:
-    return state
-  }
-}
-</code></pre><p>&#x4EE3;&#x7801;&#x6E05;&#x5355;&#xFF1A;<code>reducer/counter.js</code></p>
-<pre class="language-"><code>export default function counter(state = 0, action) {
-  switch (action.type) {
-  case &apos;INCREMENT&apos;:
-    return state + 1
-  case &apos;DECREMENT&apos;:
-    return state - 1
-  default:
-    return state
-  }
-}
-</code></pre><p>&#x4EE3;&#x7801;&#x6E05;&#x5355;&#xFF1A;<code>reducers/index.js</code></p>
-<pre class="language-"><code>import { combineReducers } from &apos;redux&apos;
-import todos from &apos;./todos&apos;
-import counter from &apos;./counter&apos;
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">todos</span><span class="token punctuation">(</span>state <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">case</span> <span class="token string">&apos;ADD_TODO&apos;</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> state<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token punctuation">[</span>action<span class="token punctuation">.</span>text<span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token keyword">default</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> state
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4EE3;&#x7801;&#x6E05;&#x5355;&#xFF1A;<code>reducer/counter.js</code></p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">counter</span><span class="token punctuation">(</span>state <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">case</span> <span class="token string">&apos;INCREMENT&apos;</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> state <span class="token operator">+</span> <span class="token number">1</span>
+  <span class="token keyword">case</span> <span class="token string">&apos;DECREMENT&apos;</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> state <span class="token operator">-</span> <span class="token number">1</span>
+  <span class="token keyword">default</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> state
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4EE3;&#x7801;&#x6E05;&#x5355;&#xFF1A;<code>reducers/index.js</code></p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> combineReducers <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span>
+<span class="token keyword">import</span> todos <span class="token keyword">from</span> <span class="token string">&apos;./todos&apos;</span>
+<span class="token keyword">import</span> counter <span class="token keyword">from</span> <span class="token string">&apos;./counter&apos;</span>
 
-export default combineReducers({
-  todos,
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">combineReducers</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  todos<span class="token punctuation">,</span>
   counter
-})
-</code></pre><p>&#x4EE3;&#x7801;&#x6E05;&#x5355;&#xFF1A;<code>App.js</code></p>
-<pre class="language-"><code>import { createStore } from &apos;redux&apos;
-import reducer from &apos;./reducer/index.js&apos;
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x4EE3;&#x7801;&#x6E05;&#x5355;&#xFF1A;<code>App.js</code></p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> createStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span>
+<span class="token keyword">import</span> reducer <span class="token keyword">from</span> <span class="token string">&apos;./reducer/index.js&apos;</span>
 
-let store = createStore(reducer)
-console.log(&apos;&#x5F53;&#x524D;&#x7684; state :&apos;, store.getState())
+<span class="token keyword">let</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>reducer<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;&#x5F53;&#x524D;&#x7684; state :&apos;</span><span class="token punctuation">,</span> store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-store.dispatch({
-  type: &apos;ADD_TODO&apos;,
-  text: &apos;Use Redux&apos;
-})
-store.dispatch({
-  type: &apos;INCREMENT&apos;,
-})
-console.log(&apos;&#x6539;&#x53D8;&#x540E;&#x7684; state :&apos;, store.getState())
-</code></pre><h3 id="applymiddleware">applyMiddleware</h3>
+store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> <span class="token string">&apos;ADD_TODO&apos;</span><span class="token punctuation">,</span>
+  text<span class="token punctuation">:</span> <span class="token string">&apos;Use Redux&apos;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> <span class="token string">&apos;INCREMENT&apos;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;&#x6539;&#x53D8;&#x540E;&#x7684; state :&apos;</span><span class="token punctuation">,</span> store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="applymiddleware">applyMiddleware</h3>
 <p>&#x8C03;&#x7528;&#x65B9;&#x5F0F;&#xFF1A;applyMiddleware(...middlewares)</p>
 <p>&#x4F7F;&#x7528;&#x5305;&#x542B;&#x81EA;&#x5B9A;&#x4E49;&#x529F;&#x80FD;&#x7684; middleware &#x6765;&#x6269;&#x5C55; Redux &#x662F;&#x4E00;&#x79CD;&#x63A8;&#x8350;&#x7684;&#x65B9;&#x5F0F;&#x3002;Middleware &#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x5305;&#x88C5; store &#x7684; dispatch &#x65B9;&#x6CD5;&#x6765;&#x8FBE;&#x5230;&#x4F60;&#x60F3;&#x8981;&#x7684;&#x76EE;&#x7684;&#x3002;&#x540C;&#x65F6;&#xFF0C; middleware &#x8FD8;&#x62E5;&#x6709;&#x201C;&#x53EF;&#x7EC4;&#x5408;&#x201D;&#x8FD9;&#x4E00;&#x5173;&#x952E;&#x7279;&#x6027;&#x3002;&#x591A;&#x4E2A; middleware &#x53EF;&#x4EE5;&#x88AB;&#x7EC4;&#x5408;&#x5230;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#xFF0C;&#x5F62;&#x6210; middleware &#x94FE;&#x3002;&#x5176;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E2A; middleware &#x90FD;&#x4E0D;&#x9700;&#x8981;&#x5173;&#x5FC3;&#x94FE;&#x4E2D;&#x5B83;&#x524D;&#x540E;&#x7684; middleware &#x7684;&#x4EFB;&#x4F55;&#x4FE1;&#x606F;&#x3002;</p>
 <p>&#x5177;&#x4F53;&#x7528;&#x6CD5;&#x6211;&#x4EEC;&#x9AD8;&#x7EA7;&#x90E8;&#x5206;&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;&#x3002;</p>
@@ -2783,7 +2788,7 @@ console.log(&apos;&#x6539;&#x53D8;&#x540E;&#x7684; state :&apos;, store.getState
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"07-redux提供的TOP API","level":"1.15.7","depth":2,"next":{"title":"08-redux 和 react 绑定使用","level":"1.15.8","depth":2,"path":"14/08-redux 和 react 绑定使用.md","ref":"./14/08-redux 和 react 绑定使用.md","articles":[]},"previous":{"title":"06-store和数据管理","level":"1.15.6","depth":2,"path":"14/06-store和数据管理.md","ref":"./14/06-store和数据管理.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"disqus":{"useIdentifier":false,"shortName":"为本书评论"},"github":{"url":"https://github.com/GuoYongfeng"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://guoyongfeng.github.io/book/"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"现代化前端工程师权威指南","language":"zh-hans","gitbook":"3.x.x","description":"现代化前端工程师权威指南"},"file":{"path":"14/07-redux提供的TOP API.md","mtime":"2016-12-13T07:45:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-13T08:52:04.343Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"07-redux提供的TOP API","level":"1.15.7","depth":2,"next":{"title":"08-redux 和 react 绑定使用","level":"1.15.8","depth":2,"path":"14/08-redux 和 react 绑定使用.md","ref":"./14/08-redux 和 react 绑定使用.md","articles":[]},"previous":{"title":"06-store和数据管理","level":"1.15.6","depth":2,"path":"14/06-store和数据管理.md","ref":"./14/06-store和数据管理.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"disqus":{"useIdentifier":false,"shortName":"为本书评论"},"github":{"url":"https://github.com/GuoYongfeng"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://guoyongfeng.github.io/book/"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"现代化前端工程师权威指南","language":"zh-hans","gitbook":"3.x.x","description":"现代化前端工程师权威指南"},"file":{"path":"14/07-redux提供的TOP API.md","mtime":"2016-12-13T13:40:17.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-13T14:52:13.928Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
