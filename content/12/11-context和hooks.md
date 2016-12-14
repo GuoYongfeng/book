@@ -1,7 +1,7 @@
 
 ## setRouteLeaveHook路由钩子函数：处理路由切换时的操作
 
-```
+```JavaScript
 import React, { Component, PropTypes } from 'react';
 import { Router, Route, hashHistory, Link } from 'react-router';
 

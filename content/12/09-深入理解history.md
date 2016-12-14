@@ -3,7 +3,7 @@
 
 browserHistory和hashHistory不一样，使用browserHistory的时候，浏览器中导航栏的URL就不会出现_k的hash键值对。实际项目中也一般用browserHistory.
 
-```
+```JavaScript
 import React, { Component } from 'react';
 import { Router, Route, browserHistory, Link } from 'react-router';
 

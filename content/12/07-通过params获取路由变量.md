@@ -3,7 +3,7 @@
 
 刚才展示的是常规的路由，路由中的规则是给定的，现在我们尝试使用路由变量，在组件中获取这个路由的变量，并做相应的组件展示。
 
-```
+```JavaScript
 import React, { Component } from 'react';
 import { Router, Route, hashHistory, Link, IndexRoute } from 'react-router';
 

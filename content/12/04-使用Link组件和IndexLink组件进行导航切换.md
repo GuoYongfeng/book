@@ -1,9 +1,12 @@
 
-## Redirect重定向
+## Link
 
-```
+Link是react-router提供的导航组件，可以直接使用进行路由切换
+
+代码清单：`app/container/App/App.jsx`
+```JavaScript
 import React, { Component } from 'react';
-import { Router, Route, hashHistory, Link, Redirect } from 'react-router';
+import { Router, Route, hashHistory, Link } from 'react-router';
 
 const Home = () => <div><h1>Home</h1><Links /></div>;
 const About = () => <div><h1>About</h1><Links /></div>;
@@ -14,7 +17,6 @@ const Links = () =>
     <Link to="/">Home</Link>
     <Link to="/about">About</Link>
     <Link to="/contact">Contact</Link>
-    <Link to="/contact-us">Contact US</Link>
   </nav>
 
 class App extends Component {
@@ -23,8 +25,7 @@ class App extends Component {
       <Router history={hashHistory}>
         <Route path="/" component={Home} />
         <Route path="/about" component={About} />
-        <Route path="/contact-us" component={Contact} />
-        <Redirect from="/contact" to="/contact-us" />
+        <Route path="/contact" component={Contact} />
       </Router>
     );
   }

@@ -1,5 +1,6 @@
 
 ## Router,hashHistory,Route
+
 首先下载react-router
 ```
 $ npm install react-router --save
@@ -12,7 +13,7 @@ $ npm install react-router --save
 我们首先在App.jsx写一个简单示例，让你快速的对react-router有印象。
 
 代码清单：`app/container/App/App.jsx`
-```
+```JavaScript
 import React, { Component } from 'react';
 import { Router, Route, hashHistory } from 'react-router';
 

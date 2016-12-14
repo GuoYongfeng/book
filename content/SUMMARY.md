@@ -105,19 +105,21 @@
   - 08-实战：开发一个标准react组件并发布
 
 - 第十二章：路由库react-router的入门和应用
-  - 01-概述
-  - 02-打通基本开发环境
-  - 03-基于react-router跑通基本路由
-  - 04-使用Link组件进行导航切换
-  - 05-路由的嵌套使用
-  - 06-activeClassName和activeStyle设置路由激活状态
-  - 07-params路由参数
-  - 08-更复杂的路由嵌套结合
-  - 09-IndexRoute的使用
-  - 10-IndexLink的使用
-  - 11-如何使用browserHistory
-  - 12-线上环境如何使用
-  - 13-navigating
+  - [01-概述](./12/01-概述.md)
+  - [02-搭建开发环境](./12/02-搭建开发环境.md)
+  - [03-用Router和Route组件跑通路由](./12/03-用Router和Route组件跑通路由.md)
+  - [04-使用Link组件和IndexLink组件进行导航切换](./12/04-使用Link组件和IndexLink组件进行导航切换.md)
+  - [05-路由的嵌套](./12/05-路由的嵌套.md)
+  - [06-设置路由激活状态的样式](./12/06-设置路由激活状态的样式.md)
+  - [07-通过params获取路由变量](./12/07-通过params获取路由变量.md)
+  - [08-更加复杂的路由嵌套结合](./12/08-更加复杂的路由嵌套结合.md)
+  - [09-深入理解history](./12/09-深入理解history.md)
+  - [10-navigating和Redirect组件](./12/10-navigating和Redirect组件.md)
+  - [11-context和hooks](./12/11-context和hooks.md)
+  - [12-路由的服务端渲染](./12/12-路由的服务端渲染.md)
+  - [13-使用query获取URL中的参数](./12/13-使用query获取URL中的参数.md)
+  - [14-IndexRoute](./12/14-IndexRoute.md)
+  - [15-Route中components参数的高级用法](./12/15-Route中components参数的高级用法.md)
 
 - 第十三章：react+react-router应用案例实战
   - 01-概述

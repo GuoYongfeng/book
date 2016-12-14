@@ -2,7 +2,7 @@
 
 Route中components中接收的参数不仅仅只是实际的组件，还可以是对象，通过这样的用法，我们可以更灵活的控制组件的展示。
 
-```
+```JavaScript
 import React, { Component } from 'react';
 import { Router, Route, hashHistory, Link, IndexRoute } from 'react-router';
 
