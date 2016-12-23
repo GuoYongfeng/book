@@ -5,16 +5,14 @@
   "gitbook": "3.x.x",
   "plugins": [
     "github",
-    "disqus",
-    "prism",
-    "-highlight"
+    "prism"
   ],
   "pluginsConfig": {
     "github": {
       "url": "https://github.com/GuoYongfeng"
     },
     "disqus": {
-        "shortName": "为本书评论"
+      "shortName": "为本书评论"
     },
     "prism": {
       "css": [
@@ -22,7 +20,7 @@
       ]
     },
     "sharing": {
-      "weibo": true,
+      "weibo": false,
       "twitter": false,
       "facebook": false
     },
