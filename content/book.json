@@ -4,8 +4,7 @@
   "language": "zh-hans",
   "gitbook": "3.x.x",
   "plugins": [
-    "github",
-    "prism"
+    "github"
   ],
   "pluginsConfig": {
     "github": {
@@ -13,16 +12,6 @@
     },
     "disqus": {
       "shortName": "为本书评论"
-    },
-    "prism": {
-      "css": [
-        "prismjs/themes/prism-tomorrow.css"
-      ]
-    },
-    "sharing": {
-      "weibo": false,
-      "twitter": false,
-      "facebook": false
     },
     "sitemap": {
       "hostname": "http://guoyongfeng.github.io/book/"

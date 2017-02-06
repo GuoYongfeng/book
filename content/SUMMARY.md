@@ -1,7 +1,7 @@
 # Summary
 
 
-- 第一章：Git和Github快速入门指南
+* 第一章：Git和Github快速入门指南
   - [01-概述](./01/01-概述.md)
   - [02-跳上github这艘大船](./01/02-跳上github这艘大船.md)
   - [03-git安装和基本配置](./01/03-git安装和基本配置.md)
@@ -35,12 +35,27 @@
   - 05-强大的postcss
 
 - 第五章：ES6新语法特性和Babel编译器
-  - 01-概述
-  - 02-babel-cli & preset & plugin
-  - 03-babel-core & babel-register & babel-polyfill
-  - 04-关于ES6的说明
-  - 05-let和const的使用和说明
-  - 06-如何定义箭头函数
+  - [01-概述](./05/01-概述.md)
+  - [02-babel-cli的使用](./05/02-babel-cli的使用.md)
+  - [03-preset和plugins](./05/03-preset和plugins.md)
+  - [04-进阶配置](./05/04-进阶配置.md)
+  - [05-babel的核心模块](./05/05-babel的核心模块.md)
+  - [06-和其他工具的集成](./05/06-和其他工具的集成.md)
+  - [07-let-and-const](./05/07-let-and-const.md)
+  - [08-arrow-funtions](./05/08-arrow-funtions.md)
+  - [09-classes](./05/09-classes.md)
+  - [10-object-literals](./05/10-object-literals.md)
+  - [11-teplate-literals](./05/11-teplate-literals.md)
+  - [12-assignment-destructuring](./05/12-assignment-destructuring.md)
+  - [13-spread-oprator-and-rest-parameters](./05/13-spread-oprator-and-rest-parameters.md)
+  - [14-sets-maps-and-weaksets-weakmaps](./05/14-sets-maps-and-weaksets-weakmaps.md)
+  - [15-proxies](./05/15-proxies.md)
+  - [16-decorators](./05/16-decorators.md)
+  - [17-modules](./05/17-modules.md)
+  - [18-generaters](./05/18-generaters.md)
+  - [19-iterators](./05/19-iterators.md)
+  - [20-promises](./05/20-promises.md)
+  - [21-symbols](./05/21-symbols.md)
 
 - 第六章：基于ES6的Package实战案例
   - [01-概述](./06/01-功能说明.md)
@@ -49,29 +64,24 @@
   - [04-进行单元测试](./06/04-进行单元测试.md)
   - [05-发布模块](./06/05-发布模块.md)
 
-- 第七章：争做合格的 Webpack 配置工程师
-  - 01-概述
-  - 02-webpack的介绍
-  - 03-快速上手
-  - 04-webpack的命令行介绍
-  - 05-webpack-dev-server的基本介绍和使用
-  - 06-webpack的loader的配置
-  - 07-webpack的插件使用
-  - 08-实现ES6语法的解析
-  - 09-实现React语法的解析
-  - 10-打包优化
+- 第七章：webpack 基础和运用
+  - [01-概述](./07/01-概述.md)
+  - [02-快速上手](./07/02-快速上手.md)
+  - [03-webpack 命令行说明](./07/03-webpack 命令行说明.md)
+  - [04-webpack 集成 npm scripts](./07/04-webpack 集成 npm scripts.md)
+  - [05-多入口文件编译](./07/05-多入口文件编译.md)
+  - [06-编译ES6代码](./07/06-编译ES6代码.md)
+  - [07-编译css资源](./07/07-编译css资源.md)
+  - [08-devtool让源码在浏览器中可调试](./07/08-devtool让源码在浏览器中可调试.md)
+  - [09-使用UglifyJs Plugin压缩资源](./07/09-使用UglifyJs Plugin压缩资源.md)
 
 - 第八章：使用Webpack搭建项目脚手架的实战案例
-  - 01-需求分析
-  - 02-项目初始化
-  - 03-不同开发环境的配置区分
-  - 04-cross-env模块介绍和环境变量
-  - 05-完成base基础配置
-  - 06-完成dev配置
-  - 07-完成prod配置
-  - 08-完成dll配置
-  - 09-完成test配置
-  - 10-补充和调整
+  - [01-概述](./08/01-概述.md)
+  - [02-搭建项目骨架](./08/02-搭建项目骨架.md)
+  - [03-webpack支持ES6](./08/03-webpack支持ES6.md)
+  - [04-在项目中支持使用React](./08/04-在项目中支持使用React.md)
+  - [05-测试环境搭建](./08/05-测试环境搭建.md)
+  - [06-使用Karma测试](./08/06-使用Karma测试.md)
 
 - 第九章：实现前端项目的完整测试机制
   - 01-karma测试运行器
