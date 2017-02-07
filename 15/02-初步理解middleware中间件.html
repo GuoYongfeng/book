@@ -1,0 +1,2974 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>02-初步理解middleware中间件 · 现代化前端工程师权威指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03-redux中的middleware.html" />
+    
+    
+    <link rel="prev" href="01-概述.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    第一章：Git和Github快速入门指南
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../01/01-概述.html">
+            
+                <a href="../01/01-概述.html">
+            
+                    
+                    01-概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../01/02-跳上github这艘大船.html">
+            
+                <a href="../01/02-跳上github这艘大船.html">
+            
+                    
+                    02-跳上github这艘大船
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../01/03-git安装和基本配置.html">
+            
+                <a href="../01/03-git安装和基本配置.html">
+            
+                    
+                    03-git安装和基本配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../01/04-git命令行基本使用.html">
+            
+                <a href="../01/04-git命令行基本使用.html">
+            
+                    
+                    04-git命令行基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../01/05-git分支操作.html">
+            
+                <a href="../01/05-git分支操作.html">
+            
+                    
+                    05-git分支操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../01/06-打通git和github.html">
+            
+                <a href="../01/06-打通git和github.html">
+            
+                    
+                    06-打通git和github
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    第二章：Node.js 基础和实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../02/01-概述.html">
+            
+                <a href="../02/01-概述.html">
+            
+                    
+                    01-概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../02/02-初识Node.js.html">
+            
+                <a href="../02/02-初识Node.js.html">
+            
+                    
+                    02-初识Node.js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../02/03-nodejs的安装和配置.html">
+            
+                <a href="../02/03-nodejs的安装和配置.html">
+            
+                    
+                    03-nodejs的安装和配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../02/04-npm的使用.html">
+            
+                <a href="../02/04-npm的使用.html">
+            
+                    
+                    04-npm的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../02/05-Node.js编程初体验.html">
+            
+                <a href="../02/05-Node.js编程初体验.html">
+            
+                    
+                    05-Node.js编程初体验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../02/06-模块和commonjs规范.html">
+            
+                <a href="../02/06-模块和commonjs规范.html">
+            
+                    
+                    06-模块和commonjs规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../02/07-Nodejs中的对象和核心API.html">
+            
+                <a href="../02/07-Nodejs中的对象和核心API.html">
+            
+                    
+                    07-Nodejs中的对象和核心API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    第三章：Node.js实战：开发一款CLI命令行工具
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" >
+            
+                <span>
+            
+                    
+                    01-功能说明
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <span>
+            
+                    
+                    02-process模块
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" >
+            
+                <span>
+            
+                    
+                    03-package.json说明和修改
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" >
+            
+                <span>
+            
+                    
+                    04-commander模块
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" >
+            
+                <span>
+            
+                    
+                    05-模块的调试
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" >
+            
+                <span>
+            
+                    
+                    06-完善功能
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" >
+            
+                <span>
+            
+                    
+                    07-模块发布
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    第四章：现代化CSS技术
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" >
+            
+                <span>
+            
+                    
+                    01-css的世界
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                    02-less预处理器
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                    03-sass预处理器
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" >
+            
+                <span>
+            
+                    
+                    04-stylus预处理器
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" >
+            
+                <span>
+            
+                    
+                    05-强大的postcss
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    第五章：ES6新语法特性和Babel编译器
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../05/01-概述.html">
+            
+                <a href="../05/01-概述.html">
+            
+                    
+                    01-概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../05/02-babel-cli的使用.html">
+            
+                <a href="../05/02-babel-cli的使用.html">
+            
+                    
+                    02-babel-cli的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../05/03-preset和plugins.html">
+            
+                <a href="../05/03-preset和plugins.html">
+            
+                    
+                    03-preset和plugins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../05/04-进阶配置.html">
+            
+                <a href="../05/04-进阶配置.html">
+            
+                    
+                    04-进阶配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../05/05-babel的核心模块.html">
+            
+                <a href="../05/05-babel的核心模块.html">
+            
+                    
+                    05-babel的核心模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../05/06-和其他工具的集成.html">
+            
+                <a href="../05/06-和其他工具的集成.html">
+            
+                    
+                    06-和其他工具的集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../05/07-let-and-const.html">
+            
+                <a href="../05/07-let-and-const.html">
+            
+                    
+                    07-let-and-const
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../05/08-arrow-funtions.html">
+            
+                <a href="../05/08-arrow-funtions.html">
+            
+                    
+                    08-arrow-funtions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../05/09-classes.html">
+            
+                <a href="../05/09-classes.html">
+            
+                    
+                    09-classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../05/10-object-literals.html">
+            
+                <a href="../05/10-object-literals.html">
+            
+                    
+                    10-object-literals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../05/11-teplate-literals.html">
+            
+                <a href="../05/11-teplate-literals.html">
+            
+                    
+                    11-teplate-literals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../05/12-assignment-destructuring.html">
+            
+                <a href="../05/12-assignment-destructuring.html">
+            
+                    
+                    12-assignment-destructuring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../05/13-spread-oprator-and-rest-parameters.html">
+            
+                <a href="../05/13-spread-oprator-and-rest-parameters.html">
+            
+                    
+                    13-spread-oprator-and-rest-parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../05/14-sets-maps-and-weaksets-weakmaps.html">
+            
+                <a href="../05/14-sets-maps-and-weaksets-weakmaps.html">
+            
+                    
+                    14-sets-maps-and-weaksets-weakmaps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="../05/15-proxies.html">
+            
+                <a href="../05/15-proxies.html">
+            
+                    
+                    15-proxies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="../05/16-decorators.html">
+            
+                <a href="../05/16-decorators.html">
+            
+                    
+                    16-decorators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.17" data-path="../05/17-modules.html">
+            
+                <a href="../05/17-modules.html">
+            
+                    
+                    17-modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.18" data-path="../05/18-generaters.html">
+            
+                <a href="../05/18-generaters.html">
+            
+                    
+                    18-generaters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.19" data-path="../05/19-iterators.html">
+            
+                <a href="../05/19-iterators.html">
+            
+                    
+                    19-iterators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.20" data-path="../05/20-promises.html">
+            
+                <a href="../05/20-promises.html">
+            
+                    
+                    20-promises
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.21" data-path="../05/21-symbols.html">
+            
+                <a href="../05/21-symbols.html">
+            
+                    
+                    21-symbols
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    第六章：基于ES6的Package实战案例
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../06/01-功能说明.md">
+            
+                <span>
+            
+                    
+                    01-概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../06/02-环境准备.html">
+            
+                <a href="../06/02-环境准备.html">
+            
+                    
+                    02-环境准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../06/03-模块功能实现.html">
+            
+                <a href="../06/03-模块功能实现.html">
+            
+                    
+                    03-模块功能实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../06/04-进行单元测试.html">
+            
+                <a href="../06/04-进行单元测试.html">
+            
+                    
+                    04-进行单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../06/05-发布模块.html">
+            
+                <a href="../06/05-发布模块.html">
+            
+                    
+                    05-发布模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    第七章：webpack 基础和运用
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../07/01-概述.html">
+            
+                <a href="../07/01-概述.html">
+            
+                    
+                    01-概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../07/02-快速上手.html">
+            
+                <a href="../07/02-快速上手.html">
+            
+                    
+                    02-快速上手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../07/03-webpack 命令行说明.html">
+            
+                <a href="../07/03-webpack 命令行说明.html">
+            
+                    
+                    03-webpack 命令行说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../07/04-webpack 集成 npm scripts.html">
+            
+                <a href="../07/04-webpack 集成 npm scripts.html">
+            
+                    
+                    04-webpack 集成 npm scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../07/05-多入口文件编译.html">
+            
+                <a href="../07/05-多入口文件编译.html">
+            
+                    
+                    05-多入口文件编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../07/06-编译ES6代码.html">
+            
+                <a href="../07/06-编译ES6代码.html">
+            
+                    
+                    06-编译ES6代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../07/07-编译css资源.html">
+            
+                <a href="../07/07-编译css资源.html">
+            
+                    
+                    07-编译css资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../07/08-devtool让源码在浏览器中可调试.html">
+            
+                <a href="../07/08-devtool让源码在浏览器中可调试.html">
+            
+                    
+                    08-devtool让源码在浏览器中可调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../07/09-使用UglifyJs Plugin压缩资源.html">
+            
+                <a href="../07/09-使用UglifyJs Plugin压缩资源.html">
+            
+                    
+                    09-使用UglifyJs Plugin压缩资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    第八章：使用Webpack搭建项目脚手架的实战案例
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../08/01-概述.html">
+            
+                <a href="../08/01-概述.html">
+            
+                    
+                    01-概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../08/02-搭建项目骨架.html">
+            
+                <a href="../08/02-搭建项目骨架.html">
+            
+                    
+                    02-搭建项目骨架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../08/03-webpack支持ES6.html">
+            
+                <a href="../08/03-webpack支持ES6.html">
+            
+                    
+                    03-webpack支持ES6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../08/04-在项目中支持使用React.html">
+            
+                <a href="../08/04-在项目中支持使用React.html">
+            
+                    
+                    04-在项目中支持使用React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../08/05-测试环境搭建.html">
+            
+                <a href="../08/05-测试环境搭建.html">
+            
+                    
+                    05-测试环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../08/06-使用Karma测试.html">
+            
+                <a href="../08/06-使用Karma测试.html">
+            
+                    
+                    06-使用Karma测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    第九章：实现前端项目的完整测试机制
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" >
+            
+                <span>
+            
+                    
+                    01-karma测试运行器
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" >
+            
+                <span>
+            
+                    
+                    02-mocha测试框架
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" >
+            
+                <span>
+            
+                    
+                    03-chai断言库的使用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" >
+            
+                <span>
+            
+                    
+                    04-expect断言库
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" >
+            
+                <span>
+            
+                    
+                    05-jsdom模拟浏览器DOM测试
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" >
+            
+                <span>
+            
+                    
+                    06-如何实现e2e测试
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    第十章：React.js 基础详解
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../10/01-概述.html">
+            
+                <a href="../10/01-概述.html">
+            
+                    
+                    01-概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../10/02-初识React.html">
+            
+                <a href="../10/02-初识React.html">
+            
+                    
+                    02-初识React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../10/03-JSX语法.html">
+            
+                <a href="../10/03-JSX语法.html">
+            
+                    
+                    03-JSX语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../10/04-数据流.html">
+            
+                <a href="../10/04-数据流.html">
+            
+                    
+                    04-数据流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../10/05-如何定义一个组件.html">
+            
+                <a href="../10/05-如何定义一个组件.html">
+            
+                    
+                    05-如何定义一个组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../10/06-DOM操作.html">
+            
+                <a href="../10/06-DOM操作.html">
+            
+                    
+                    06-DOM操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../10/07-事件.html">
+            
+                <a href="../10/07-事件.html">
+            
+                    
+                    07-事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../10/08-组件嵌套.html">
+            
+                <a href="../10/08-组件嵌套.html">
+            
+                    
+                    08-组件嵌套
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../10/09-表单操作.html">
+            
+                <a href="../10/09-表单操作.html">
+            
+                    
+                    09-表单操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="../10/10-如何实现mixin.html">
+            
+                <a href="../10/10-如何实现mixin.html">
+            
+                    
+                    10-如何实现mixin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.11" data-path="../10/11-基于react的评论应用开发.html">
+            
+                <a href="../10/11-基于react的评论应用开发.html">
+            
+                    
+                    11-基于react的评论应用开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    第十一章：深入react
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" >
+            
+                <span>
+            
+                    
+                    01-如何进行组件的测试
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" >
+            
+                <span>
+            
+                    
+                    02-DOM Diff原理和性能
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" >
+            
+                <span>
+            
+                    
+                    03-如何进行性能优化
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" >
+            
+                <span>
+            
+                    
+                    04-VDOM原理解析
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" >
+            
+                <span>
+            
+                    
+                    05-add-ons附加套件
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" >
+            
+                <span>
+            
+                    
+                    06-React组件在服务端渲染
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" >
+            
+                <span>
+            
+                    
+                    07-动画组件
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.8" >
+            
+                <span>
+            
+                    
+                    08-实战：开发一个标准react组件并发布
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    第十二章：路由库react-router的入门和应用
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../12/01-概述.html">
+            
+                <a href="../12/01-概述.html">
+            
+                    
+                    01-概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../12/02-搭建开发环境.html">
+            
+                <a href="../12/02-搭建开发环境.html">
+            
+                    
+                    02-搭建开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../12/03-用Router和Route组件跑通路由.html">
+            
+                <a href="../12/03-用Router和Route组件跑通路由.html">
+            
+                    
+                    03-用Router和Route组件跑通路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../12/04-使用Link组件和IndexLink组件进行导航切换.html">
+            
+                <a href="../12/04-使用Link组件和IndexLink组件进行导航切换.html">
+            
+                    
+                    04-使用Link组件和IndexLink组件进行导航切换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="../12/05-路由的嵌套.html">
+            
+                <a href="../12/05-路由的嵌套.html">
+            
+                    
+                    05-路由的嵌套
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6" data-path="../12/06-设置路由激活状态的样式.html">
+            
+                <a href="../12/06-设置路由激活状态的样式.html">
+            
+                    
+                    06-设置路由激活状态的样式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.7" data-path="../12/07-通过params获取路由变量.html">
+            
+                <a href="../12/07-通过params获取路由变量.html">
+            
+                    
+                    07-通过params获取路由变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.8" data-path="../12/08-更加复杂的路由嵌套结合.html">
+            
+                <a href="../12/08-更加复杂的路由嵌套结合.html">
+            
+                    
+                    08-更加复杂的路由嵌套结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.9" data-path="../12/09-深入理解history.html">
+            
+                <a href="../12/09-深入理解history.html">
+            
+                    
+                    09-深入理解history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.10" data-path="../12/10-navigating和Redirect组件.html">
+            
+                <a href="../12/10-navigating和Redirect组件.html">
+            
+                    
+                    10-navigating和Redirect组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.11" data-path="../12/11-context和hooks.html">
+            
+                <a href="../12/11-context和hooks.html">
+            
+                    
+                    11-context和hooks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.12" data-path="../12/12-路由的服务端渲染.html">
+            
+                <a href="../12/12-路由的服务端渲染.html">
+            
+                    
+                    12-路由的服务端渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.13" data-path="../12/13-使用query获取URL中的参数.html">
+            
+                <a href="../12/13-使用query获取URL中的参数.html">
+            
+                    
+                    13-使用query获取URL中的参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.14" data-path="../12/14-IndexRoute.html">
+            
+                <a href="../12/14-IndexRoute.html">
+            
+                    
+                    14-IndexRoute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.15" data-path="../12/15-Route中components参数的高级用法.html">
+            
+                <a href="../12/15-Route中components参数的高级用法.html">
+            
+                    
+                    15-Route中components参数的高级用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    第十三章：react+react-router应用案例实战
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../13/01-概述.html">
+            
+                <a href="../13/01-概述.html">
+            
+                    
+                    01-概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../13/02-快速开始.html">
+            
+                <a href="../13/02-快速开始.html">
+            
+                    
+                    02-快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../13/03-使用react-router跑通基本路由.html">
+            
+                <a href="../13/03-使用react-router跑通基本路由.html">
+            
+                    
+                    03-使用react-router跑通基本路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.4" data-path="../13/04-新增头部搜索组件.html">
+            
+                <a href="../13/04-新增头部搜索组件.html">
+            
+                    
+                    04-新增头部搜索组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.5" data-path="../13/05-创建展示用户信息的Profile组件.html">
+            
+                <a href="../13/05-创建展示用户信息的Profile组件.html">
+            
+                    
+                    05-创建展示用户信息的Profile组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.6" data-path="../13/06-创建组件UserProfile、UserRepos、Notes.html">
+            
+                <a href="../13/06-创建组件UserProfile、UserRepos、Notes.html">
+            
+                    
+                    06-创建组件UserProfile、UserRepos、Notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.7" data-path="../13/07-使用state和props传递数据.html">
+            
+                <a href="../13/07-使用state和props传递数据.html">
+            
+                    
+                    07-使用state和props传递数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.8" data-path="../13/08-接入真实的数据.html">
+            
+                <a href="../13/08-接入真实的数据.html">
+            
+                    
+                    08-接入真实的数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.9" data-path="../13/09-评论列表组件NoteList.html">
+            
+                <a href="../13/09-评论列表组件NoteList.html">
+            
+                    
+                    09-评论列表组件NoteList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.10" data-path="../13/10-为组件添加PropTypes接口约束.html">
+            
+                <a href="../13/10-为组件添加PropTypes接口约束.html">
+            
+                    
+                    10-为组件添加PropTypes接口约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.11" data-path="../13/11-使用axios请求github API的数据.html">
+            
+                <a href="../13/11-使用axios请求github API的数据.html">
+            
+                    
+                    11-使用axios请求github API的数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.12" data-path="../13/12-将数据传入组件进行展示.html">
+            
+                <a href="../13/12-将数据传入组件进行展示.html">
+            
+                    
+                    12-将数据传入组件进行展示
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    第十四章：初入redux的世界
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../14/01-概述.html">
+            
+                <a href="../14/01-概述.html">
+            
+                    
+                    01-概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../14/02-从MVC到FLUX来理解redux.html">
+            
+                <a href="../14/02-从MVC到FLUX来理解redux.html">
+            
+                    
+                    02-从MVC到FLUX来理解redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../14/03-redux 快速入门.html">
+            
+                <a href="../14/03-redux 快速入门.html">
+            
+                    
+                    03-redux 快速入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="../14/04-理解action和action creator.html">
+            
+                <a href="../14/04-理解action和action creator.html">
+            
+                    
+                    04-理解action和action creator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.5" data-path="../14/05-redux中的reducer和纯函数.html">
+            
+                <a href="../14/05-redux中的reducer和纯函数.html">
+            
+                    
+                    05-redux中的reducer和纯函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.6" data-path="../14/06-store和数据管理.html">
+            
+                <a href="../14/06-store和数据管理.html">
+            
+                    
+                    06-store和数据管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.7" data-path="../14/07-redux提供的TOP API.html">
+            
+                <a href="../14/07-redux提供的TOP API.html">
+            
+                    
+                    07-redux提供的TOP API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.8" data-path="../14/08-redux 和 react 绑定使用.html">
+            
+                <a href="../14/08-redux 和 react 绑定使用.html">
+            
+                    
+                    08-redux 和 react 绑定使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.9" data-path="../14/09-实战：一步步开发一个 TODO 应用.html">
+            
+                <a href="../14/09-实战：一步步开发一个 TODO 应用.html">
+            
+                    
+                    09-实战：一步步开发一个 TODO 应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    第十五章：深入redux的应用
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="01-概述.html">
+            
+                <a href="01-概述.html">
+            
+                    
+                    01-概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.2" data-path="02-初步理解middleware中间件.html">
+            
+                <a href="02-初步理解middleware中间件.html">
+            
+                    
+                    02-初步理解middleware中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="03-redux中的middleware.html">
+            
+                <a href="03-redux中的middleware.html">
+            
+                    
+                    03-redux中的middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="04-redux-logger的应用和理解.html">
+            
+                <a href="04-redux-logger的应用和理解.html">
+            
+                    
+                    04-redux-logger的应用和理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="05-如何定义一个redux的中间件.html">
+            
+                <a href="05-如何定义一个redux的中间件.html">
+            
+                    
+                    05-如何定义一个redux的中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="06-redux的开发工具dev-tools.html">
+            
+                <a href="06-redux的开发工具dev-tools.html">
+            
+                    
+                    06-redux的开发工具dev-tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="07-开发工具使用上的优化.html">
+            
+                <a href="07-开发工具使用上的优化.html">
+            
+                    
+                    07-开发工具使用上的优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="08-redux-thunk实现异步数据流.html">
+            
+                <a href="08-redux-thunk实现异步数据流.html">
+            
+                    
+                    08-redux-thunk实现异步数据流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="09-redux-saga的使用.html">
+            
+                <a href="09-redux-saga的使用.html">
+            
+                    
+                    09-redux-saga的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="10-redux-promise实现异步编程操作.html">
+            
+                <a href="10-redux-promise实现异步编程操作.html">
+            
+                    
+                    10-redux-promise实现异步编程操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="11-redux和react-router如何在一起.html">
+            
+                <a href="11-redux和react-router如何在一起.html">
+            
+                    
+                    11-redux和react-router如何在一起
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                    第十六章：基于 Redux 的应用开发
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" >
+            
+                <span>
+            
+                    
+                    01-概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" >
+            
+                <span>
+            
+                    
+                    02-开发环境说明
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" >
+            
+                <span>
+            
+                    
+                    03-准备工作
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" >
+            
+                <span>
+            
+                    
+                    04-应用开发
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                    第十七章：Rxjs和Redux-observable的激情火花
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" >
+            
+                <span>
+            
+                    
+                    01-概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" >
+            
+                <span>
+            
+                    
+                    02-什么是rxjs
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" >
+            
+                <span>
+            
+                    
+                    03-rxjs快速上手
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" >
+            
+                <span>
+            
+                    
+                    04-rxjs的基本使用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" >
+            
+                <span>
+            
+                    
+                    05-rxjs和redux
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" >
+            
+                <span>
+            
+                    
+                    06-redux-observable的基本理解
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" >
+            
+                <span>
+            
+                    
+                    07-如何使用redux-observable
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <span>
+            
+                    
+                    第十八章：Node.js服务端编程体验
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" >
+            
+                <span>
+            
+                    
+                    01-概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" >
+            
+                <span>
+            
+                    
+                    02-express框架
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" >
+            
+                <span>
+            
+                    
+                    03-jade模板
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" >
+            
+                <span>
+            
+                    
+                    04-forever模块
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" >
+            
+                <span>
+            
+                    
+                    05-request模块
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" >
+            
+                <span>
+            
+                    
+                    06-cookie和session
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <span>
+            
+                    
+                    第十九章：Node.js框架Koa2的入门和使用
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" >
+            
+                <span>
+            
+                    
+                    01-概述
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" >
+            
+                <span>
+            
+                    
+                    02-什么是koa
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" >
+            
+                <span>
+            
+                    
+                    03-koa 1.0 和koa 2.0
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" >
+            
+                <span>
+            
+                    
+                    04-快速上手koa
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" >
+            
+                <span>
+            
+                    
+                    第二十章：Node.js + React.js的前后端同构项目
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" >
+            
+                <span>
+            
+                    
+                    01-架构分析
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" >
+            
+                <span>
+            
+                    
+                    02-开发环境
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" >
+            
+                <span>
+            
+                    
+                    03-功能说明
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" >
+            
+                <span>
+            
+                    
+                    04-前端架构实现
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" >
+            
+                <span>
+            
+                    
+                    附录
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../21/01-markdown 语法介绍和使用.html">
+            
+                <a href="../21/01-markdown 语法介绍和使用.html">
+            
+                    
+                    01-markdown 语法介绍和使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../21/02-Atom 编辑器的使用和配置.html">
+            
+                <a href="../21/02-Atom 编辑器的使用和配置.html">
+            
+                    
+                    02-Atom 编辑器的使用和配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../21/03-eslint 的使用.html">
+            
+                <a href="../21/03-eslint 的使用.html">
+            
+                    
+                    03-eslint 的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../21/04-shell 命令行基础使用.html">
+            
+                <a href="../21/04-shell 命令行基础使用.html">
+            
+                    
+                    04-shell 命令行基础使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../21/05-JavaScript 函数式编程.html">
+            
+                <a href="../21/05-JavaScript 函数式编程.html">
+            
+                    
+                    05-JavaScript 函数式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.6" data-path="../21/06-JavaScript 异步编程指南.html">
+            
+                <a href="../21/06-JavaScript 异步编程指南.html">
+            
+                    
+                    06-JavaScript 异步编程指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.7" data-path="../21/07-react.js 编码规范.html">
+            
+                <a href="../21/07-react.js 编码规范.html">
+            
+                    
+                    07-react.js 编码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.8" data-path="../21/08-immutable.js 介绍和使用.html">
+            
+                <a href="../21/08-immutable.js 介绍和使用.html">
+            
+                    
+                    08-immutable.js 介绍和使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >02-初步理解middleware中间件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 style="font-size: 40px;text-align:center;color: #007cdc;" id="&#x6DF1;&#x5165;&#x7406;&#x89E3;redux&#x7684;middleware">&#x6DF1;&#x5165;&#x7406;&#x89E3;Redux&#x7684;Middleware</h1>
+
+<p>&#x901A;&#x8FC7;&#x524D;&#x9762;&#x4E24;&#x90E8;&#x5206;&#x7684;&#x77E5;&#x8BC6;&#x8BB2;&#x89E3;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Redux&#x8FDB;&#x884C;&#x9879;&#x76EE;&#x5F00;&#x53D1;&#x4E86;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x8981;&#x7528;&#x597D;Redux&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6DF1;&#x5165;&#x7406;&#x89E3;&#x5E76;&#x4F7F;&#x7528;&#x5176;Middleware&#xFF0C;&#x5E76;&#x4E86;&#x89E3;&#x5176;&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x3002;&#x6211;&#x5F00;&#x59CB;&#x4E86;Redux&#x6E90;&#x7801;&#x7684;&#x63A2;&#x7D22;&#xFF0C;&#x8981;&#x60F3;&#x80FD;&#x66F4;&#x597D;&#x7684;&#x7406;&#x89E3;&#x6E90;&#x7801;&#xFF0C;&#x4F60;&#x5FC5;&#x987B;&#x975E;&#x5E38;&#x719F;&#x6089;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x7406;&#x5FF5;&#x3002;&#x5B83;&#x7684;&#x4EE3;&#x7801;&#x5199;&#x7684;&#x975E;&#x5E38;&#x7B80;&#x7EC3;&#xFF0C;&#x6CA1;&#x6709;&#x624E;&#x5B9E;&#x7684;&#x57FA;&#x672C;&#x529F;&#x4F60;&#x4F1A;&#x89C9;&#x5F97;&#x975E;&#x5E38;&#x96BE;&#x770B;&#x61C2;&#x3002;&#x6211;&#x5C06;&#x5C1D;&#x8BD5;&#x5E26;&#x9886;&#x4F60;&#x4E86;&#x89E3;&#x4E00;&#x4E9B;&#x9700;&#x8981;&#x7528;&#x5230;&#x7684;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x6982;&#x5FF5;&#xFF0C;&#x5305;&#x62EC;&#xFF1A;&#x590D;&#x5408;&#x51FD;&#x6570;&#xFF0C;&#x67EF;&#x91CC;&#x5316;&#xFF0C;&#x548C;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#x7B49;&#x3002;</p>
+<p>&#x6211;&#x9F13;&#x52B1;&#x4F60;&#x53BB;&#x9605;&#x8BFB;&#x6E90;&#x7801;&#x6765;&#x641E;&#x660E;&#x767D;reducer&#x51FD;&#x6570;&#x662F;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x548C;&#x7EC4;&#x5408;&#x7684;&#xFF0C;action creator&#x51FD;&#x6570;&#x662F;&#x5982;&#x4F55;&#x4F5C;&#x7528;&#x4E8E;dispatch&#x65B9;&#x6CD5;&#x7684;&#xFF0C;&#x8FD8;&#x6709;&#x5982;&#x4F55;&#x589E;&#x52A0;&#x4E2D;&#x95F4;&#x4EF6;&#x6765;&#x5F71;&#x54CD;&#x9ED8;&#x8BA4;&#x7684;dispatch&#x65B9;&#x6CD5;&#x7684;&#x3002;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x5C06;&#x4F1A;&#x5E2E;&#x4F60;&#x7406;&#x89E3;&#x4E00;&#x4E9B;Redux&#x6846;&#x67B6;&#x7684;&#x6E90;&#x7801;&#xFF0C;&#x63D0;&#x5347;&#x4F60;&#x7684;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x80FD;&#x529B;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x8BA9;&#x4F60;&#x5C1D;&#x8BD5;&#x4E00;&#x4E0B;&#x90E8;&#x5206;ES6&#x8BED;&#x6CD5;&#x3002;</p>
+<h2 id="1&#x4E2D;&#x95F4;&#x4EF6;">1.&#x4E2D;&#x95F4;&#x4EF6;</h2>
+<p>Redux&#x6700;&#x6709;&#x8DA3;&#x7684;&#x4E00;&#x4E2A;&#x6982;&#x5FF5;&#x662F;&#x5B83;&#x5141;&#x8BB8;&#x4F60;&#x901A;&#x8FC7;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#x6765;&#x5F71;&#x54CD;&#x4F60;store&#x7684;dispatch&#x903B;&#x8F91;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5F53;&#x6211;&#x7B2C;&#x4E00;&#x6B21;&#x8BD5;&#x56FE;&#x67E5;&#x770B;<a href="http://rackt.github.io/redux/docs/api/applyMiddleware.html" target="_blank">applyMiddleware.js</a>&#x6E90;&#x7801;&#x65F6;&#xFF0C;&#x53EF;&#x628A;&#x672C;&#x5B9D;&#x5B9D;&#x5413;&#x574F;&#x4E86;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x53EA;&#x80FD;&#x5C1D;&#x8BD5;&#x53C2;&#x7167;Redux&#x4E2D;&#x95F4;&#x4EF6;&#x7684;<a href="http://rackt.github.io/redux/docs/api/applyMiddleware.html" target="_blank">&#x6587;&#x6863;</a>&#x4ECE;&#x529F;&#x80FD;&#x5C42;&#x9762;&#x6765;&#x5206;&#x6790;&#x4EE3;&#x7801;&#x3002;&#x770B;&#x4E86;&#x4E0B;&#x9762;<a href="http://rackt.github.io/redux/docs/api/applyMiddleware.html" target="_blank">&#x8FD9;&#x6BB5;&#x8BDD;</a>&#xFF0C;&#x8BA9;&#x6211;&#x627E;&#x56DE;&#x4E86;&#x9762;&#x5B50;&#xFF1A;</p>
+<blockquote>
+<p>&#x201C;&#x4E2D;&#x95F4;&#x4EF6;&#x201D;&#x8FD9;&#x4E2A;&#x8BCD;&#x542C;&#x8D77;&#x6765;&#x5F88;&#x6050;&#x6016;&#xFF0C;&#x4F46;&#x5B83;&#x5B9E;&#x9645;&#x4E00;&#x70B9;&#x90FD;&#x4E0D;&#x96BE;&#x3002;&#x60F3;&#x66F4;&#x597D;&#x7684;&#x4E86;&#x89E3;&#x4E2D;&#x95F4;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x770B;&#x4E00;&#x4E0B;&#x90A3;&#x4E9B;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#x4E86;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#x662F;&#x600E;&#x4E48;&#x5DE5;&#x4F5C;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x5C1D;&#x8BD5;&#x81EA;&#x5DF1;&#x5199;&#x4E00;&#x4E2A;&#x3002;&#x51FD;&#x6570;&#x5D4C;&#x5957;&#x5199;&#x6CD5;&#x770B;&#x8D77;&#x6765;&#x5F88;&#x6050;&#x6016;&#xFF0C;&#x4F46;&#x662F;&#x5927;&#x591A;&#x6570;&#x4F60;&#x80FD;&#x627E;&#x5230;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x4EE3;&#x7801;&#x90FD;&#x4E0D;&#x8D85;&#x8FC7;&#x5341;&#x884C;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x4EEC;&#x7684;&#x5F3A;&#x5927;&#x6765;&#x81EA;&#x4E8E;&#x5B83;&#x4EEC;&#x7684;&#x53EF;&#x5D4C;&#x5957;&#x7EC4;&#x5408;&#x6027;&#x3002;</p>
+</blockquote>
+<p>&#x533A;&#x533A;10&#x884C;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#x5F88;&#x5BB9;&#x6613;&#x5199;&#xFF0C;&#x4F46;&#x662F;&#x4F60;&#x8981;&#x60F3;&#x660E;&#x767D;&#x5B83;&#x4EEC;&#x662F;&#x5982;&#x4F55;&#x653E;&#x5165;&#x4E2D;&#x95F4;&#x4EF6;&#x8C03;&#x7528;&#x94FE;&#xFF0C;&#x53C8;&#x662F;&#x5982;&#x4F55;&#x5F71;&#x54CD;store&#x7684;diapatch&#x65B9;&#x6CD5;&#x7684;&#xFF0C;&#x8FD8;&#x771F;&#x9700;&#x8981;&#x4E00;&#x4E9B;&#x7ECF;&#x9A8C;&#x3002;&#x9996;&#x5148;&#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x7B80;&#x5355;&#x5B9A;&#x4E49;&#x4E00;&#x4E0B;&#x4E2D;&#x95F4;&#x4EF6;&#x5230;&#x5E95;&#x662F;&#x4E2A;&#x5565;&#xFF0C;&#x5E76;&#x4E14;&#x627E;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#x770B;&#x4E00;&#x4E0B;&#x5B83;&#x4EEC;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x3002;&#x5173;&#x4E8E;&#x4E2D;&#x95F4;&#x4EF6;&#x7684;&#x5B9A;&#x4E49;&#x6211;&#x80FD;&#x627E;&#x5230;&#x7684;&#x6700;&#x7B80;&#x5355;&#x7684;&#x63CF;&#x8FF0;&#x662F;&#xFF1A;</p>
+<blockquote>
+<p>&#x4E2D;&#x95F4;&#x4EF6;&#x4E3B;&#x8981;&#x88AB;&#x7528;&#x4E8E;&#x5206;&#x79BB;&#x90A3;&#x4E9B;&#x4E0D;&#x5C5E;&#x4E8E;&#x4F60;&#x5E94;&#x7528;&#x7684;&#x6838;&#x5FC3;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x7684;&#x53EF;&#x88AB;&#x7EC4;&#x5408;&#x8D77;&#x6765;&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+</blockquote>
+<p>&#x542C;&#x8D77;&#x6765;&#x4E0D;&#x7B97;&#x592A;&#x590D;&#x6742;&#xFF0C;&#x5BF9;&#x5427;;)</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x4E4B;&#x524D;&#x7528;&#x8FC7;<a href="http://koajs.com/" target="_blank">Koa.js</a>n&#xFF0C;&#x90A3;&#x4F60;&#x53EF;&#x80FD;&#x65E9;&#x5C31;&#x63A5;&#x89E6;&#x8FC7;&#x4E2D;&#x95F4;&#x4EF6;&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#x4E86;&#x3002;&#x6211;&#x6700;&#x65E9;&#x4F7F;&#x7528;&#x4E2D;&#x95F4;&#x4EF6;&#x662F;&#x5728;&#x6211;&#x7528;Java Servlet&#x5199;Filters&#x548C;&#x7528;Ruby&#x5199;&#x7C7B;&#x4F3C;&#x8BA4;&#x8BC1;&#x6388;&#x6743;&#xFF0C;&#x65E5;&#x5FD7;&#xFF0C;&#x6027;&#x80FD;&#x76D1;&#x63A7;&#x6216;&#x4E00;&#x4E9B;&#x9700;&#x8981;&#x5728;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x6267;&#x884C;&#x524D;&#x5904;&#x7406;&#x7684;&#x6A21;&#x5757;&#x3002;</p>
+<p>Redux&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#x4E3B;&#x8981;&#x7528;&#x5728;store&#x7684;dispatch&#x51FD;&#x6570;&#x4E0A;&#x3002;dispatch&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x53D1;&#x9001;actions&#x7ED9;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;reducer&#x6765;&#x5F71;&#x54CD;&#x5E94;&#x7528;&#x72B6;&#x6001;&#x7684;&#x3002;&#x4E2D;&#x95F4;&#x4EF6;&#x53EF;&#x4EE5;&#x589E;&#x5F3A;&#x9ED8;&#x8BA4;&#x7684;dispatch&#x51FD;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E0B;Redux1.0.1&#x7248;&#x672C;&#x7684;applyMiddleware&#x6E90;&#x7801;&#xFF1A;</p>
+<pre><code>export default function applyMiddleware(...middlewares) {            return (next)  =&gt;
+
+        (reducer, initialState) =&gt; {
+
+              var store = next(reducer, initialState);
+              var dispatch = store.dispatch;
+              var chain = [];
+
+              var middlewareAPI = {
+                getState: store.getState,
+                dispatch: (action) =&gt; dispatch(action)
+              };
+
+              chain = middlewares.map(middleware =&gt;
+                            middleware(middlewareAPI));
+
+              dispatch = compose(...chain, store.dispatch);
+              return {
+                ...store,
+                dispatch
+              };
+           };
+}
+</code></pre><p>&#x5C31;&#x8FD9;&#x4E48;&#x70B9;&#x513F;&#x4EE3;&#x7801;&#xFF0C;&#x5C31;&#x4F7F;&#x7528;&#x4E86;&#x975E;&#x5E38;&#x591A;&#x7684;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x7684;&#x601D;&#x60F3;&#xFF0C;&#x5305;&#x62EC;&#xFF1A;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#xFF0C;&#x590D;&#x5408;&#x51FD;&#x6570;&#xFF0C;&#x67EF;&#x91CC;&#x5316;&#x548C;ES6&#x8BED;&#x6CD5;&#x3002;&#x4E00;&#x5F00;&#x59CB;&#x6211;&#x53CD;&#x590D;&#x8BFB;&#x4E86;&#x5341;&#x904D;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x75AF;&#x4E86;:)&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x5148;&#x6765;&#x5206;&#x522B;&#x770B;&#x4E00;&#x4E9B;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x7684;&#x77E5;&#x8BC6;&#xFF0C;&#x56DE;&#x5934;&#x518D;&#x7406;&#x4F1A;&#x4E0A;&#x9762;&#x8FD9;&#x6BB5;&#x8BA9;&#x4EBA;&#x4E0D;&#x723D;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<h2 id="2&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x6982;&#x5FF5;">2.&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x6982;&#x5FF5;</h2>
+<p>&#x5728;&#x5F00;&#x59CB;&#x9605;&#x8BFB;Redux&#x4E2D;&#x95F4;&#x4EF6;&#x6E90;&#x7801;&#x4E4B;&#x524D;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5148;&#x638C;&#x63E1;&#x4E00;&#x4E9B;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x77E5;&#x8BC6;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5DF2;&#x7ECF;&#x81EA;&#x5B66;&#x6210;&#x624D;&#x4E86;&#x8BF7;&#x8DF3;&#x8FC7;&#x672C;&#x8282;&#x3002;</p>
+<h3 id="&#x590D;&#x5408;&#x51FD;&#x6570;">&#x590D;&#x5408;&#x51FD;&#x6570;</h3>
+<p>&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x662F;&#x975E;&#x5E38;&#x7406;&#x8BBA;&#x548C;&#x975E;&#x5E38;&#x6570;&#x5B66;&#x5316;&#x7684;&#x3002;&#x7528;&#x6570;&#x5B66;&#x7684;&#x89C6;&#x89D2;&#x6765;&#x89E3;&#x91CA;&#x590D;&#x5408;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>given:
+    f(x) = x^2 + 3x + 1
+    g(x) = 2x
+
+then:
+    (f &#x2218; g)(x) = f(g(x)) = f(2x) = 4x^2 + 6x + 1
+</code></pre><p>&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x4E0A;&#x9762;&#x7684;&#x65B9;&#x5F0F;&#x6269;&#x5C55;&#x5230;&#x7EC4;&#x5408;&#x4E24;&#x4E2A;&#x6216;&#x66F4;&#x591A;&#x4E2A;&#x51FD;&#x6570;&#x8FD9;&#x90FD;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#x3002;&#x6211;&#x4EEC;&#x518D;&#x6765;&#x770B;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x6F14;&#x793A;&#x7EC4;&#x5408;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code>var greet = function(x) { return `Hello, ${ x }` };
+var emote = function(x) { return `${x} :)` };
+
+var compose = function(f, g) {
+      return function(x) {
+        return f(g(x));
+      }
+}
+
+var happyGreeting = compose(greet, emote);
+// happyGreeting(&#x201C;Mark&#x201D;) -&gt; Hello, Mark :)
+</code></pre><p>&#x6211;&#x4EEC;&#x5F53;&#x7136;&#x53EF;&#x4EE5;&#x7EC4;&#x5408;&#x66F4;&#x591A;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x91CC;&#x53EA;&#x662F;&#x7ED9;&#x5927;&#x5BB6;&#x7B80;&#x5355;&#x9610;&#x8FF0;&#x4E00;&#x4E0B;&#x57FA;&#x7840;&#x6982;&#x5FF5;&#x3002;&#x66F4;&#x591A;&#x7684;&#x5E38;&#x7528;&#x6280;&#x5DE7;&#x6211;&#x4EEC;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;Redux&#x7684;&#x6E90;&#x7801;&#x4E2D;&#x770B;&#x5230;&#x3002;</p>
+<h3 id="&#x67EF;&#x91CC;&#x5316;">&#x67EF;&#x91CC;&#x5316;</h3>
+<p>&#x53E6;&#x4E00;&#x4E2A;&#x5C4C;&#x70B8;&#x5929;&#x7684;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x6982;&#x5FF5;&#x88AB;&#x79F0;&#x4E4B;&#x4E3A;&#xFF1A;&#x67EF;&#x91CC;&#x5316;&#x3002;&#xFF08;&#x8BD1;&#x8005;&#x6CE8;&#xFF1A;&#x8FD9;&#x6BB5;&#x7FFB;&#x8BD1;&#x8D77;&#x6765;&#x592A;&#x96BE;&#x4E86;&#xFF0C;&#x6211;&#x653E;&#x5F03;&#x4E86;&#xFF0C;&#x63A8;&#x8350;&#x4F60;&#x770B;<a href="http://www.zhangxinxu.com/wordpress/2013/02/js-currying/" target="_blank">&#x8FD9;&#x91CC;</a>&#x6765;&#x4E86;&#x89E3;&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#xFF09;</p>
+<pre><code>var curriedAdd = function(a) {
+    return function(b) {
+        return a + b;
+    };
+};
+
+var addTen = curriedAdd(10);
+addTen(10); //20
+</code></pre><p>&#x901A;&#x8FC7;&#x67EF;&#x91CC;&#x5316;&#x6765;&#x7EC4;&#x5408;&#x4F60;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5F3A;&#x5927;&#x7684;&#x6570;&#x636E;&#x5904;&#x7406;&#x7BA1;&#x9053;&#x3002;</p>
+<h2 id="3redux&#x7684;dispatch&#x51FD;&#x6570;">3.Redux&#x7684;Dispatch&#x51FD;&#x6570;</h2>
+<p>Redux&#x7684;Store&#x6709;&#x4E00;&#x4E2A;dispatch&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x5173;&#x6CE8;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x5B9E;&#x73B0;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x7528;&#x5B83;&#x6307;&#x6D3E;actions&#x5230;&#x4F60;&#x5B9A;&#x4E49;&#x7684;reducer&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x4EE5;&#x66F4;&#x65B0;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x72B6;&#x6001;&#x3002;Redux&#x7684;reducer&#x51FD;&#x6570;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x53C2;&#x6570;&#x548C;&#x4E00;&#x4E2A;action&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x72B6;&#x6001;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre><code>reducer:: state -&gt; action -&gt; state
+</code></pre><p>&#x6307;&#x6D3E;action&#x5F88;&#x50CF;&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5047;&#x8BBE;&#x8981;&#x4ECE;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x4E2D;&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;action&#x7ED3;&#x6784;&#x4E00;&#x822C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>{type: types.DELETE_ITEM, id: 1}
+</code></pre><p>store&#x4F1A;&#x6307;&#x6D3E;&#x8FD9;&#x4E2A;action&#x5BF9;&#x8C61;&#x5230;&#x5B83;&#x6240;&#x62E5;&#x6709;&#x7684;&#x6240;&#x6709;reducer&#x51FD;&#x6570;&#x6765;&#x5F71;&#x54CD;&#x5E94;&#x7528;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x7136;&#x800C;&#x53EA;&#x6709;&#x5173;&#x6CE8;&#x5220;&#x9664;&#x903B;&#x8F91;&#x7684;reducer&#x4F1A;&#x771F;&#x7684;&#x4FEE;&#x6539;&#x72B6;&#x6001;&#x3002;&#x5728;&#x6B64;&#x671F;&#x95F4;&#x6CA1;&#x4EBA;&#x4F1A;&#x5173;&#x6CE8;&#x5230;&#x5E95;&#x662F;&#x8C01;&#x4FEE;&#x6539;&#x4E86;&#x72B6;&#x6001;&#xFF0C;&#x82B1;&#x4E86;&#x591A;&#x957F;&#x65F6;&#x95F4;&#xFF0C;&#x6216;&#x8005;&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#x53D8;&#x66F4;&#x524D;&#x540E;&#x7684;&#x72B6;&#x6001;&#x6570;&#x636E;&#x955C;&#x50CF;&#x3002;&#x8FD9;&#x4E9B;&#x975E;&#x6838;&#x5FC3;&#x5173;&#x6CE8;&#x70B9;&#x90FD;&#x53EF;&#x4EE5;&#x4EA4;&#x7ED9;&#x4E2D;&#x95F4;&#x4EF6;&#x6765;&#x5B8C;&#x6210;&#x3002;</p>
+<h2 id="4redux-middleware">4.Redux Middleware</h2>
+<p>Redux&#x4E2D;&#x95F4;&#x4EF6;&#x88AB;&#x8BBE;&#x8BA1;&#x6210;&#x53EF;&#x7EC4;&#x5408;&#x7684;&#xFF0C;&#x4F1A;&#x5728;dispatch&#x65B9;&#x6CD5;&#x4E4B;&#x524D;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x65E5;&#x5FD7;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x5B83;&#x4F1A;&#x7B80;&#x5355;&#x7684;&#x8F93;&#x51FA;dispatch&#x524D;&#x540E;&#x7684;&#x5E94;&#x7528;&#x72B6;&#x6001;&#x3002;Redux&#x4E2D;&#x95F4;&#x4EF6;&#x7684;&#x7B7E;&#x540D;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>middleware:: next -&gt; action -&gt; retVal
+</code></pre><p>&#x6211;&#x4EEC;&#x7684;logger&#x4E2D;&#x95F4;&#x4EF6;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>export default function createLogger({ getState }) {
+      return (next) =&gt;
+        (action) =&gt; {
+              const console = window.console;
+              const prevState = getState();
+              const returnValue = next(action);
+              const nextState = getState();
+              const actionType = String(action.type);
+              const message = `action ${actionType}`;
+
+              console.log(`%c prev state`, `color: #9E9E9E`, prevState);
+              console.log(`%c action`, `color: #03A9F4`, action);
+              console.log(`%c next state`, `color: #4CAF50`, nextState);
+              return returnValue;
+    };
+}
+</code></pre><p>&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x7684;<code>createLogger</code>&#x63A5;&#x53D7;&#x7684;<code>getState</code>&#x65B9;&#x6CD5;&#x662F;&#x7531;<code>applyMiddleware.js</code>&#x6CE8;&#x5165;&#x8FDB;&#x6765;&#x7684;&#x3002;&#x4F7F;&#x7528;&#x5B83;&#x53EF;&#x4EE5;&#x5728;&#x5185;&#x90E8;&#x7684;&#x95ED;&#x5305;&#x4E2D;&#x5F97;&#x5230;&#x5E94;&#x7528;&#x7684;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x3002;&#x6700;&#x540E;&#x6211;&#x4EEC;&#x8FD4;&#x56DE;&#x8C03;&#x7528;<code>next</code>&#x521B;&#x5EFA;&#x7684;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x7ED3;&#x679C;&#x3002;<code>next</code>&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x7EF4;&#x62A4;&#x4E2D;&#x95F4;&#x4EF6;&#x8C03;&#x7528;&#x94FE;&#x548C;dispatch&#xFF0C;&#x5B83;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x63A5;&#x53D7;<code>action</code>&#x5BF9;&#x8C61;&#x7684;&#x67EF;&#x91CC;&#x5316;&#x51FD;&#x6570;&#xFF0C;&#x63A5;&#x53D7;&#x7684;<code>action</code>&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x5728;&#x4E2D;&#x95F4;&#x4EF6;&#x4E2D;&#x88AB;&#x4FEE;&#x6539;&#xFF0C;&#x518D;&#x4F20;&#x9012;&#x7ED9;&#x4E0B;&#x4E00;&#x4E2A;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x6700;&#x7EC8;dispatch&#x4F1A;&#x4F7F;&#x7528;&#x4E2D;&#x95F4;&#x4EF6;&#x4FEE;&#x6539;&#x540E;&#x7684;action&#x6765;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x66F4;&#x5065;&#x58EE;&#x7684;logger&#x4E2D;&#x95F4;&#x4EF6;&#x5B9E;&#x73B0;&#x53EF;&#x4EE5;&#x770B;<a href="https://www.npmjs.com/package/redux-logger" target="_blank">&#x8FD9;&#x91CC;</a>&#xFF0C;&#x4E3A;&#x4E86;&#x8282;&#x7701;&#x65F6;&#x95F4;&#xFF0C;&#x6211;&#x4EEC;&#x7684;logger&#x4E2D;&#x95F4;&#x4EF6;&#x5B9E;&#x73B0;&#x975E;&#x5E38;&#x7684;&#x7B80;&#x964B;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B;&#x4E0A;&#x9762;&#x7684;logger&#x4E2D;&#x95F4;&#x4EF6;&#x7684;&#x4E1A;&#x52A1;&#x6D41;&#x7A0B;&#xFF1A;</p>
+<ol>
+<li>&#x5F97;&#x5230;&#x5F53;&#x524D;&#x7684;&#x5E94;&#x7528;&#x72B6;&#x6001;&#xFF1B;</li>
+<li>&#x5C06;action&#x6307;&#x6D3E;&#x7ED9;&#x4E0B;&#x4E00;&#x4E2A;&#x4E2D;&#x95F4;&#x4EF6;&#xFF1B;</li>
+<li>&#x8C03;&#x7528;&#x94FE;&#x4E0B;&#x6E38;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#x5168;&#x90E8;&#x88AB;&#x6267;&#x884C;&#xFF1B;</li>
+<li>store&#x4E2D;&#x7684;&#x5339;&#x914D;reducer&#x88AB;&#x6267;&#x884C;&#xFF1B;</li>
+<li>&#x6B64;&#x65F6;&#x5F97;&#x5230;&#x65B0;&#x7684;&#x5E94;&#x7528;&#x72B6;&#x6001;&#x3002;</li>
+</ol>
+<p>&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x6765;&#x770B;&#x4E00;&#x4E2A;&#x62E5;&#x6709;2&#x4E2A;&#x4E2D;&#x95F4;&#x4EF6;&#x7EC4;&#x4EF6;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<p><img src="https://cdn-images-1.medium.com/max/800/1*jNHs4JtDn9r00bs4iNSwjA.png" alt=""></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01-概述.html" class="navigation navigation-prev " aria-label="Previous page: 01-概述">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03-redux中的middleware.html" class="navigation navigation-next " aria-label="Next page: 03-redux中的middleware">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"02-初步理解middleware中间件","level":"2.1.2","depth":2,"next":{"title":"03-redux中的middleware","level":"2.1.3","depth":2,"path":"15/03-redux中的middleware.md","ref":"./15/03-redux中的middleware.md","articles":[]},"previous":{"title":"01-概述","level":"2.1.1","depth":2,"path":"15/01-概述.md","ref":"./15/01-概述.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"为本书评论"},"github":{"url":"https://github.com/GuoYongfeng"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"http://guoyongfeng.github.io/book/"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"现代化前端工程师权威指南","language":"zh-hans","gitbook":"3.x.x","description":"现代化前端工程师权威指南"},"file":{"path":"15/02-初步理解middleware中间件.md","mtime":"2017-02-07T09:37:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-07T09:47:22.883Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
