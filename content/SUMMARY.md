@@ -154,21 +154,21 @@
   - [06-store和数据管理](./14/06-store和数据管理.md)
   - [07-redux提供的TOP API](./14/07-redux提供的TOP API.md)
   - [08-redux 和 react 绑定使用](./14/08-redux 和 react 绑定使用.md)
-  - [09-实战：实现一个counter app](./14/09-实战：实现一个counter app.md)
+  - [09-实战：一步步开发一个 TODO 应用](./14/09-实战：一步步开发一个 TODO 应用.md)
 
 
 - 第十五章：深入redux的应用
-  - 01-概述
-  - 02-middleware中间节概念介绍
-  - 03-redux中的middleware
-  - 04-redux-logger的应用和理解
-  - 05-如何定义一个redux的中间件
-  - 06-redux的开发工具dev-tools
-  - 07-开发工具使用上的优化
-  - 08-redux-thunk实现异步数据流
-  - 09-redux-saga的使用
-  - 10-redux-promise实现异步编程操作
-  - 11-redux和react-router如何在一起
+  - [01-概述](./15/01-概述.md)
+  - [02-初步理解middleware中间件](./15/02-初步理解middleware中间件.md)
+  - [03-redux中的middleware](./15/03-redux中的middleware.md)
+  - [04-redux-logger的应用和理解](./15/04-redux-logger的应用和理解.md)
+  - [05-如何定义一个redux的中间件](./15/05-如何定义一个redux的中间件.md)
+  - [06-redux的开发工具dev-tools](./15/06-redux的开发工具dev-tools.md)
+  - [07-开发工具使用上的优化](./15/07-开发工具使用上的优化.md)
+  - [08-redux-thunk实现异步数据流](./15/08-redux-thunk实现异步数据流.md)
+  - [09-redux-saga的使用](./15/09-redux-saga的使用.md)
+  - [10-redux-promise实现异步编程操作](./15/10-redux-promise实现异步编程操作.md)
+  - [11-redux和react-router如何在一起](./15/11-redux和react-router如何在一起.md)
 
 - 第十六章：基于 Redux 的应用开发
   - 01-概述

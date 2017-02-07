@@ -1,7 +1,7 @@
 {
-  "name": "full-stack-course",
-  "version": "1.0.0",
-  "description": "full stack course",
+  "name": "guide-for-modern-front-end-engineer ",
+  "version": "1.0.1",
+  "description": "现代化前端工程师权威指南",
   "main": "index.js",
   "dependencies": {
     "async": "^1.5.0",
