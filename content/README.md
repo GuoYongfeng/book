@@ -29,7 +29,7 @@
 ## 特别声明
 
 - 未经允许，不可转载
-- 本书有配套视频培训课程，在[CSDN](hhttp://edu.csdn.net/combo/detail/482)同步开展
+- 本书有配套视频培训课程，在[CSDN](http://edu.csdn.net/combo/detail/482)同步开展
 
 ## 如何学习本书内容
 
